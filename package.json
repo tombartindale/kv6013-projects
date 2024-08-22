@@ -1,0 +1,25 @@
+{
+  "name": "ethics",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "serve": "node index.js & ngrok http --domain=amoeba-saved-heartily.ngrok-free.app 3000",
+    "proxy": "ngrok http --domain=amoeba-saved-heartily.ngrok-free.app 3000"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "docxtemplater": "3.47.4",
+    "pizzip": "3.1.7",
+    "handlebars": "4.7.8",
+    "lodash": "4.17.21"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

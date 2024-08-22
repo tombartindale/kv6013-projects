@@ -1,0 +1,100 @@
+{
+  "responder": {
+    "name": "email",
+    "title": "Email"
+  },
+  "student": {
+    "name": "student",
+    "title": "Student"
+  },
+  "submitDate": {
+    "name": "submitDate",
+    "title": "Submitted At"
+  },
+  "r99d8cdb516a043f2afa58f2fac6c0433": {
+    "name": "project_title",
+    "title": "Project title"
+  },
+  "r442c737faa5f456180bacd7ecd563e03": {
+    "name": "withdraw",
+    "title": "Withdrawal terms"
+  },
+  "r696ab29415514a048903d906682f381f": {
+    "name": "working_with_people"
+  },
+  "r6152ebd549b44ab68da251ba7a657816": {
+    "name": "research_question",
+    "title": "Research Question"
+  },
+  "r9ef9bb09f2804d9084400d5e783ebb67": {
+    "name": "collection_methods",
+    "title": "Data collection methods"
+  },
+  "rc49aeaaf4882456381340059762c1294": "",
+  "r3bd4f237a13b49bb94e5b5d9ddb757df": "",
+  "r71a6fc91dd134376bcb5ac878528cd58": "",
+  "rcc3434097c034c29b943bb1a93c051d9": "",
+  "rb7b8398ce722463397ca5da83cc72dcd": {
+    "name": "study_location",
+    "title": "Study Location"
+  },
+  "rdf5a0ec2fc1a4d5b912745d486f679ff": "",
+  "rb248b05ae6a34e61b86aea452804b6dd": "I confirm I have read this policy",
+  "ra48f05243c5f4520be1b639dd6b9eeae": {
+    "name": "storage_procedure",
+    "title": "Storage procedure"
+  },
+  "r5ad7764351d349df9231287d44f6c23f": "",
+  "ra2ed8bc8608e48e7bdf40fb98a065401": "",
+  "rdf19f95c5bd44df8975b9477a0ac6b27": {
+    "name": "data_identifiable",
+    "title": "Identifiable data being collected"
+  },
+  "r7d083ca18cd047e29c178151105e4646": "",
+  "r096fecc83cb24ad38e538adbfef11cc0": {
+    "name": "participant_task",
+    "title": "What will participants be asked to do?"
+  },
+  "rb18f75b9c7484f5490bb11eaf9b7e176": {
+    "name": "purpose",
+    "title": "Purpose of Study"
+  },
+  "r09ce4320f68d49129cf13699466bd676": {
+    "name": "participant_disadvantages",
+    "title": "Disadvantages for participants"
+  },
+  "rf6e69c58fe924a5bb3c7ddc98a1fcc79": {
+    "name": "participant_advantages",
+    "title": "Advantages for participants"
+  },
+  "r49acb570f69f44fca7fbc9cd8e92453a": {
+    "name": "exclusion_criteria",
+    "title": "Exclusion Criteria"
+  },
+  "r7f941249f1d94c319e945fac9428e6ef": {
+    "name": "participant_number",
+    "title": "Number to recruit"
+  },
+  "r20d4e73531994b788fafa00ee7fc4c98": {
+    "name": "participant_description",
+    "title": "Who are the participants?"
+  },
+  "rf5aa7c9caba844a5b921c97f0b58c3ef": {
+    "name": "data_processing",
+    "title": "Data processing methods"
+  },
+  "r137d052aa78f4435acf05469e9df85b4": {
+    "name": "analysis_methods",
+    "title": "Analysis methods"
+  },
+  "r1a6be1d17c74465c9ba7b82e19710aa4": "",
+  "rdfa5717e0a724ef0a8a93bb65fabeddc": "",
+  "rd91c38bedab94f9bb277e7388b8115e3": {
+    "name": "data_nonidentifiable",
+    "title": "Non-identifiable data being collected"
+  },
+  "rec17ac1676ab49d4b7d829f9ea04e7c5": "",
+  "r13da7a9e95774d989a2c6216c875ae93": {
+    "name": "full_ethics"
+  }
+}
