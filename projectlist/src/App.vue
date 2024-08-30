@@ -6,7 +6,11 @@ q-layout(view="lHh Lpr lff")
         .col-12.col-sm-6
           .text-h3.text-bold.q-py-sm KV6013 PROJECT PORTAL.
         .col.text-right
-          img(contain, src="/NU_Logo_White.svg", style="max-height: 120px")
+          img(
+            contain,
+            src="~./assets/NU_Logo_White.svg",
+            style="max-height: 120px"
+          )
       .q-pa-lg
         .row.justify-center
           .col-md-8.text-center.q-my-lg
@@ -41,6 +45,7 @@ q-layout(view="lHh Lpr lff")
             )
               span {{ tag }}
             //- div {{ filter }}
+        .text-h6.q-ma-xl.text-center(v-if="approved.length === 0") There are no projects listed yet...
         .row.q-col-gutter-lg.q-mt-xl.justify-center
           .col-12.col-sm-6.col-md-4(v-for="project of filtered")
             q-card.full-height(flat, bordered, square)
