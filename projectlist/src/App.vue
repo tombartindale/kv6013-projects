@@ -12,9 +12,19 @@ q-layout(view="lHh Lpr lff")
             style="max-height: 120px"
           )
       .q-pa-lg
+        .row
         .row.justify-center
-          .col-md-8.text-center.q-my-lg
+          .col-md-8.text-center.q-mt-lg
             .text-body1 Browse this page to find projects that interest you. It is best to contact the supervisors of projects you are interested in to understand them better and help secure your involvement.
+          .col-md-8.text-center.q-mb-lg.text-primary.q-mt-md
+            .text-h5 You have {{ daysLeft }} days until you need to submit your preferences
+            q-btn.q-mt-md(
+              square,
+              unelevated,
+              color="black",
+              target="_BLANK",
+              href="https://livenorthumbriaac-my.sharepoint.com/:l:/g/personal/tom_bartindale_northumbria_ac_uk/FEgYMTZjAbJGnjX3MPvfU_cBSUUFy-K7SqsmRu8WOSe9zQ?nav=NzRiNWU3ZGItM2E2MS00NGU2LTk4YzYtZjRmYTQxMjQ1NTVl"
+            ) Submit Preferences
         .row.justify-center
           .col-auto
             .text-body2.text-overline.text-uppercase Filter
@@ -87,9 +97,9 @@ q-layout(view="lHh Lpr lff")
                       ) {{ tag.Value }}
                       //- div {{ project }}
                     .q-my-md
-                    .text-small.absolute-bottom-right.q-pa-xs.q-pr-sm.text-grey(
-                      style="font-size: 12px"
-                    ) added {{ project.Modified }}
+                  //- .text-small.absolute-bottom-right.q-pa-xs.q-pr-sm.text-grey(
+                  //-   style="font-size: 12px"
+                  //- ) added {{ project.Modified }}
                 q-separator
                 .col-auto
                   q-card-section
@@ -101,7 +111,7 @@ q-layout(view="lHh Lpr lff")
                           :selected.sync="filter.Supervisor[project.Supervisor.DisplayName]"
                         )
                           q-avatar
-                            q-img(:src="project.Supervisor.Picture") 
+                            q-icon(name="person") 
                           span {{ project.Supervisor.DisplayName }}
                       .col-auto
                         //- div {{ project.Supervisor }}
@@ -117,6 +127,7 @@ q-layout(view="lHh Lpr lff")
 <script>
 const projects = require("../data/projects.json");
 const _ = require("lodash");
+const { DateTime } = require("luxon");
 
 export default {
   name: "App",
@@ -166,6 +177,11 @@ export default {
     );
   },
   computed: {
+    daysLeft() {
+      return Math.round(
+        DateTime.fromFormat("14.10.2024", "dd.MM.yyyy").diffNow("days").days
+      );
+    },
     approved() {
       return _.filter(this.projects, { Approved: true });
     },

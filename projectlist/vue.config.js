@@ -20,10 +20,11 @@ module.exports = {
   publicPath: process.env.NODE_ENV === "production" ? "/kv6013-projects/" : "/",
   pluginOptions: {
     quasar: {
+      extras: ["material-icons"],
       // importStrategy: "kebab",
       // rtlSupport: true,
-      // //   iconSet: "svg-material-icons",
       framework: {
+        iconSet: "svg-material-icons",
         cssAddon: true,
       },
     },

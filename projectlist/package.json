@@ -4,12 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --modern",
-    "lint": "vue-cli-service lint",
-    "build-report": "vue-cli-service build --modern --report",
-    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\"",
-    "production": "vue-cli-service build --production",
-    "deploy": "npm version patch && npm run build && firebase deploy --only hosting"
+    "build": "vue-cli-service build --modern"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.13.0",
@@ -19,7 +14,7 @@
     "core-js": "^3.11.1",
     "es-check": "^5.2.3",
     "i": "^0.3.6",
-    "luxon": "^1.26.0",
+    "luxon": "^3.5.0",
     "quasar": "^1.22.10",
     "util": "^0.12.3",
     "uuid": "^8.3.2",
