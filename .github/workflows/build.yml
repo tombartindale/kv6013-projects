@@ -60,7 +60,9 @@ jobs:
         #
         # You may remove this line if you want to manage the configuration yourself.
       - name: Get Data
-        run: mkdir ./data && wget -O ./data/projects.json https://livenorthumbriaac-my.sharepoint.com/:u:/g/personal/tom_bartindale_northumbria_ac_uk/EVL-OsJeIO1DnCck1AUTghwBYnVFNpVJuN-UwZspj8AESg?download=1
+        env: # Or as an environment variable
+          PROJECTS_FILE: ${{ secrets.PROJECTS_FILE }}
+        run: mkdir ./data && wget -O ./data/projects.json $PROJECTS_FILE
       - name: Install dependencies
         run: npm i --silent
       - name: Build
