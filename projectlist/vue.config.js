@@ -42,7 +42,7 @@ module.exports = {
   pluginOptions: {
     quasar: {
       // importStrategy: "kebab",
-      rtlSupport: true,
+      // rtlSupport: true,
       // //   iconSet: "svg-material-icons",
       framework: {
         cssAddon: true,

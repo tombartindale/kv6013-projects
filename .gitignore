@@ -4,3 +4,4 @@ node_modules
 test_*
 .DS_Store
 projects.json
+dist

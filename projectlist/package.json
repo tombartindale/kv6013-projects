@@ -1,6 +1,6 @@
 {
-  "name": "youth-innovation",
-  "version": "0.6.37",
+  "name": "KV6013",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
