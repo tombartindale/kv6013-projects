@@ -64,6 +64,11 @@ function transformVars(varsIn) {
 
 app.use(bodyParser.json());
 
+app.post("/dump", (req, res) => {
+  fs.writeFileSync("projects.json", JSON.stringify(req.body));
+  return res.send();
+});
+
 app.post("/markdown", (req, res) => {
   //render PDF based on the information sent:
 

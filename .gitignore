@@ -3,3 +3,4 @@ node_modules
 *_test.docx
 test_*
 .DS_Store
+projects.json

@@ -1,0 +1,58 @@
+@use "sass:map";
+
+@import "./quasar.variables.scss";
+
+@import "~quasar-styl";
+
+// .text-h1 {
+  
+//   @media (max-width: $breakpoint-sm-max)
+//   {
+//     font-size: 2.2rem !important;   
+//   }
+// }
+
+// .text-h2 {
+  
+//   @media (max-width: $breakpoint-sm-max)
+//   {
+//     font-size: 1.75rem !important;   
+//   }
+// }
+
+// .q-ma-dynamic {
+//     @media (max-width: $breakpoint-sm-max)
+//     {
+//       margin-left: map.get($space-md,"x");
+//       margin-right: map.get($space-md,"x");
+//     }
+
+//     @media (min-width: $breakpoint-md-min)
+//     {
+//       margin-left: map.get($space-xl,"x");
+//       margin-right: map.get($space-xl,"x");
+//     }
+//   }
+
+//   .q-pa-dynamic {
+//     @media (max-width: $breakpoint-sm-max)
+//     {
+//       padding-left: map.get($space-md,"x");
+//       padding-right: map.get($space-md,"x");
+//     }
+
+//     @media (min-width: $breakpoint-md-min)
+//     {
+//       padding-left: map.get($space-xl,"x");
+//       padding-right: map.get($space-xl,"x");
+//     }
+//   }
+
+//   .floatinglabel {
+//     width: 100%;
+//     position: absolute;
+//     top: 0;
+//     transform: translateY(-50%);
+//     left: 10px;
+//     font-size: 0.8rem;
+//   }

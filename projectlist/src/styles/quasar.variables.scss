@@ -1,0 +1,54 @@
+@import url("https://use.typekit.net/crp3nql.css");
+
+// // It's highly recommended to change the default colors
+// // to match your app's branding.
+
+// $primary: #226736;
+// $secondary: #4A2559;
+// $accent: #FF91A8;
+
+// $dark: #1d1d1d;
+
+// $positive: #009c26;
+// $negative: #c10015;
+// $info: #31ccec;
+// $warning: #f2c037;
+
+// $lilac: #D9BAD7;
+
+$generic-border-radius: 0;
+$button-border-radius: 0;
+
+// $h1:        (size: 2.375rem,     line-height: 128%,     letter-spacing: -0.036em, weight: 800) !default;
+// $h2:        (size: 2rem,  line-height: 110%,  letter-spacing: -0.036em, weight: 500) !default;
+
+// $body1:     (size: 1.25rem) !default;
+// $h3:        (size: 3rem,     line-height: 3.125rem, letter-spacing: normal,    weight: 400) !default;
+// $h4:        (size: 2.125rem, line-height: 2.5rem,   letter-spacing: .00735em,  weight: 400) !default;
+// $h5:        (size: 1.5rem,   line-height: 2rem,     letter-spacing: normal,    weight: 400) !default;
+// $h6:        (size: 1.25rem,  line-height: 2rem,     letter-spacing: .0125em,   weight: 500) !default;
+
+
+// $font-prefix: "../../node_modules/@ibm/plex";
+// @import "/node_modules/@ibm/plex/scss/ibm-plex.scss";
+
+// $font-prefix: "/node_modules/@fontsource/ibm-plex-sans";
+// @import "/node_modules/@fontsource/ibm-plex-sans";
+
+// @import "/node_modules/lato-font/scss/_public-api.scss";
+// $lato-font-path: "../../node_modules/lato-font/fonts";
+// @include lato-include-font("medium");
+
+// @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,200;0,400;1,900&display=swap");
+// @import "/node_modules/@fontsource/poppins/scss/mixins.scss";
+
+// @import "~quasar-variables-styl";
+
+$typography-font-family: "azo-sans-web", "New Gothic", "Helvetica Neue", Arial, sans-serif;
+
+// * {
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+
+// @import "font-size.scss";
