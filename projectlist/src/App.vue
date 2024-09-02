@@ -15,7 +15,7 @@ q-layout(view="lHh Lpr lff")
         .row
         .row.justify-center
           .col-md-8.text-center.q-mt-lg
-            .text-body1 Browse this page to find projects that interest you. It is best to contact the supervisors of projects you are interested in to understand them better and help secure your involvement.
+            .text-h5 Browse this page to find projects (or supervisors) that interest you. It is best to contact the supervisors of projects you are interested in to understand them better and help secure your involvement.
           .col-md-8.text-center.q-mb-lg.text-primary.q-mt-md
             .text-h5 You have {{ daysLeft }} days until you need to submit your preferences
             q-btn.q-mt-md(
@@ -30,6 +30,8 @@ q-layout(view="lHh Lpr lff")
             .text-body2.text-overline.text-uppercase Filter
         .row.justify-center
           .col-auto
+            //- div {{ selectedSupervisor }}
+
             q-chip(
               v-for="(v,tag) of filter.TechnicalSkillsRequired",
               clickable,
@@ -45,15 +47,27 @@ q-layout(view="lHh Lpr lff")
               clickable,
               :selected.sync="filter.PotentialOutput[tag]"
             ) {{ tag }}
-          .col-12.text-center
-            q-chip(
-              v-for="(v,tag) of filter.Supervisor",
-              v-show="v",
-              clickable,
-              size="md",
-              :selected.sync="filter.Supervisor[tag]"
+          //- .col-12.text-center
+          //-   q-chip(
+          //-     v-for="(v,tag) of filter.Supervisor",
+          //-     v-show="v",
+          //-     clickable,
+          //-     size="md",
+          //-     :selected.sync="filter.Supervisor[tag]"
+          //-   )
+          //-     span {{ tag }}
+        .row.justify-center
+          .col-3
+            q-select(
+              label="By supervisor",
+              rounded,
+              outlined,
+              dense,
+              clearable,
+              :options="Object.keys(filter.Supervisor)",
+              v-model="selectedSupervisor",
+              @input="updateSupervisor"
             )
-              span {{ tag }}
             //- div {{ filter }}
         .text-h6.q-ma-xl.text-center(v-if="approved.length === 0") There are no projects listed yet...
         .row.q-col-gutter-lg.q-mt-xl.justify-center
@@ -134,6 +148,7 @@ export default {
   data: function () {
     return {
       projects,
+      selectedSupervisor: "",
       filter: {
         TechnicalSkillsRequired: {},
         Supervisor: {},
@@ -175,6 +190,40 @@ export default {
       ),
       false
     );
+
+    const supers = _.compact(
+      _.uniq(_.map(this.projects, "Supervisor.DisplayName"))
+    );
+
+    this.filter.Supervisor = _.zipObject(
+      supers,
+      Array(supers.length).fill(false)
+    );
+  },
+  watch: {
+    "filter.Supervisor": {
+      deep: true,
+      handler() {
+        // console.log("handler");
+        for (let s in this.filter.Supervisor) {
+          if (this.filter.Supervisor[s] === true) this.selectedSupervisor = s;
+        }
+      },
+    },
+  },
+  methods: {
+    updateSupervisor(val) {
+      //set all to false:
+      for (let s in this.filter.Supervisor) {
+        this.filter.Supervisor[s] = false;
+      }
+
+      if (val != null) {
+        this.filter.Supervisor[val] = true;
+      }
+
+      // console.log(this.filter.Supervisor);
+    },
   },
   computed: {
     daysLeft() {
