@@ -45,12 +45,18 @@
     "title": "Storage procedure"
   },
   "r5ad7764351d349df9231287d44f6c23f": "",
-  "ra2ed8bc8608e48e7bdf40fb98a065401": "",
+  "ra2ed8bc8608e48e7bdf40fb98a065401": {
+    "name": "risk_files",
+    "title": "Additional Risk Assessments"
+  },
   "rdf19f95c5bd44df8975b9477a0ac6b27": {
     "name": "data_identifiable",
     "title": "Identifiable data being collected"
   },
-  "r7d083ca18cd047e29c178151105e4646": "",
+  "r7d083ca18cd047e29c178151105e4646": {
+    "name": "additional_files",
+    "title": "Additional Files"
+  },
   "r096fecc83cb24ad38e538adbfef11cc0": {
     "name": "participant_task",
     "title": "What will participants be asked to do?"

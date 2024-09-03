@@ -57,3 +57,17 @@ Recruiting {{participant_number}} people from {{participant_description}}.
 #### Data Management
 
 {{storage_procedure}}
+
+{{#if risk_files.length}}
+#### Extra Risk Assessments
+{{#each risk_files}}
+- {{this.link}}
+{{/each}}
+{{/if}}
+
+{{#if additional_files.length}}
+#### Extra Files
+{{#each additional_files}}
+- {{this.link}}
+{{/each}}
+{{/if}}

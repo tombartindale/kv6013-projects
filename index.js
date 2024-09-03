@@ -75,6 +75,11 @@ app.post("/markdown", (req, res) => {
   console.log(req.body);
   console.log(transformVars(req.body));
 
+  fs.writeFileSync(
+    path.resolve(__dirname, "test_data.json"),
+    JSON.stringify(req.body)
+  );
+
   // const result = renderDoc("consent.docx", req.body);
   // let output = "";
 
