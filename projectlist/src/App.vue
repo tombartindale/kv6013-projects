@@ -88,7 +88,21 @@ q-layout(view="lHh Lpr lff")
                 q-separator
                 .col
                   q-card-section
-                    .text-body1.q-mb-md {{ project["Short_x0020_description_x0020_of"] }}
+                    //- div {{ project.expand }}
+                    .cursor-pointer(
+                      style="position: relative",
+                      @click="expand(project)"
+                    )
+                      div(
+                        style="height: 150px; min-height: 150px; overflow: hidden; transition: height 1s ease-out",
+                        :class="{ expanded: project.expand }"
+                      )
+                        .text-body1.q-mb-md.text-justify {{ project["Short_x0020_description_x0020_of"] }}
+                      .absolute-bottom(
+                        v-show="!project.expand",
+                        style="height: 100%; width: 100%; background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 1) 100%)"
+                      )
+                    //- q-btn(size="sm", dense, flat, no-caps) read more
 
                     //- div {{ project }}
                     .row
@@ -149,6 +163,7 @@ export default {
     return {
       projects,
       selectedSupervisor: "",
+      isExpanded: {},
       filter: {
         TechnicalSkillsRequired: {},
         Supervisor: {},
@@ -212,6 +227,12 @@ export default {
     },
   },
   methods: {
+    expand(project) {
+      if (project.expand) project.expand = false;
+      else this.$set(project, "expand", true);
+      // console.log(project);
+      // project.expand = true;
+    },
     updateSupervisor(val) {
       //set all to false:
       for (let s in this.filter.Supervisor) {
@@ -282,3 +303,8 @@ export default {
 </script>
 
 
+<style scoped>
+.expanded {
+  height: inherit !important;
+}
+</style>
