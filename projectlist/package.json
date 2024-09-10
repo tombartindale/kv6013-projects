@@ -16,6 +16,7 @@
     "i": "^0.3.6",
     "luxon": "^3.5.0",
     "quasar": "^1.22.10",
+    "stopword": "^3.1.1",
     "util": "^0.12.3",
     "uuid": "^8.3.2",
     "vue": "^2.6.11",
@@ -23,7 +24,8 @@
     "vue-cookies": "^1.7.4",
     "vue-crono": "^2.0.9",
     "vue-i18n": "^8.22.3",
-    "vue-router": "^3.4.6"
+    "vue-router": "^3.4.6",
+    "vuewordcloud": "^17.12.23"
   },
   "devDependencies": {
     "@intlify/vue-i18n-loader": "^1.0.0",

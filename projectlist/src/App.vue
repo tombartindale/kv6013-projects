@@ -57,7 +57,7 @@ q-layout(view="lHh Lpr lff")
           //-   )
           //-     span {{ tag }}
         .row.justify-center
-          .col-3
+          .col-3.q-mt-sm
             q-select(
               label="By supervisor",
               rounded,
@@ -69,6 +69,32 @@ q-layout(view="lHh Lpr lff")
               @input="updateSupervisor"
             )
             //- div {{ filter }}
+        .row.q-mt-sm
+          .col-12
+            .row.items-center.justify-center
+              .col-auto.text-center.text-overline.text-uppercase Click a word to explore projects
+              .col-auto
+                q-btn.text-grey-8(
+                  flat,
+                  dense,
+                  @click="selectedWord = ''",
+                  v-if="selectedWord != ''"
+                ) reset
+          .col-12
+            VueWordCloud(
+              @click="onWordClick",
+              style="height: 480px; width: 100%",
+              :words="allWords",
+              font-family="azo-sans-web",
+              :font-size-ratio="1",
+              :spacing="2",
+              :animation-duration="500"
+            )
+              template(v-slot="props")
+                .cursor-pointer(
+                  @click="onWordClick(props.text)",
+                  :class="{ 'text-primary': selectedWord === props.text }"
+                ) {{ props.text }}
         .text-h6.q-ma-xl.text-center(v-if="approved.length === 0") There are no projects listed yet...
         .row.q-col-gutter-lg.q-mt-xl.justify-center
           .col-12.col-sm-6.col-md-4(v-for="project of filtered")
@@ -156,9 +182,12 @@ q-layout(view="lHh Lpr lff")
 const projects = require("../data/projects.json");
 const _ = require("lodash");
 const { DateTime } = require("luxon");
+import VueWordCloud from "vuewordcloud";
+const { removeStopwords } = require("stopword");
 
 export default {
   name: "App",
+  components: { [VueWordCloud.name]: VueWordCloud },
   data: function () {
     return {
       projects,
@@ -170,6 +199,7 @@ export default {
         ProjectMethods: {},
         PotentialOutput: {},
       },
+      selectedWord: "",
     };
   },
   mounted() {
@@ -227,6 +257,10 @@ export default {
     },
   },
   methods: {
+    onWordClick(word) {
+      console.log(word);
+      this.selectedWord = word;
+    },
     expand(project) {
       if (project.expand) project.expand = false;
       else this.$set(project, "expand", true);
@@ -247,6 +281,34 @@ export default {
     },
   },
   computed: {
+    allWords() {
+      // console.log(this.projects);
+      const allw = _.countBy(
+        _.remove(
+          removeStopwords(
+            _.flatten(
+              _.map(this.filtered, (p) =>
+                p["Short_x0020_description_x0020_of"].split(" ")
+              )
+            )
+          ),
+          (w) =>
+            !_.includes(["project", "will", "use", "(e.g.,"], w) &&
+            !w.startsWith("http:") &&
+            !w.startsWith("[")
+        )
+      );
+
+      // console.log(allw);
+
+      const sorted = _.fromPairs(_.sortBy(_.toPairs(allw), 1).reverse());
+
+      const zipped = _.zip(Object.keys(sorted), Object.values(sorted));
+
+      // console.log(zipped);
+
+      return _.take(zipped, 100);
+    },
     daysLeft() {
       return Math.round(
         DateTime.fromFormat("14.10.2024", "dd.MM.yyyy").diffNow("days").days
@@ -280,7 +342,8 @@ export default {
         tsf.length === 0 &&
         msf.length === 0 &&
         psf.length === 0 &&
-        ssf.length === 0
+        ssf.length === 0 &&
+        this.selectedWord === ""
       )
         return this.approved;
 
@@ -289,12 +352,16 @@ export default {
         const ms = _.map(p.ProjectMethods, "Value");
         const ps = _.map(p.PotentialOutput, "Value");
         const ss = [p.Supervisor.DisplayName];
+        const words = p["Short_x0020_description_x0020_of"].split(" ");
+        const containsWord = _.includes(words, this.selectedWord);
 
         return (
-          (tsf.length === 0 || _.intersection(ts, tsf).length > 0) &&
-          (psf.length === 0 || _.intersection(ps, psf).length > 0) &&
-          (msf.length === 0 || _.intersection(ms, msf).length > 0) &&
-          (ssf.length === 0 || _.intersection(ss, ssf).length > 0)
+          ((tsf.length === 0 || _.intersection(ts, tsf).length > 0) &&
+            (psf.length === 0 || _.intersection(ps, psf).length > 0) &&
+            (msf.length === 0 || _.intersection(ms, msf).length > 0) &&
+            (ssf.length === 0 || _.intersection(ss, ssf).length > 0) &&
+            this.selectedWord === "") ||
+          containsWord
         );
       });
     },
