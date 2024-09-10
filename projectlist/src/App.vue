@@ -356,12 +356,11 @@ export default {
         const containsWord = _.includes(words, this.selectedWord);
 
         return (
-          ((tsf.length === 0 || _.intersection(ts, tsf).length > 0) &&
-            (psf.length === 0 || _.intersection(ps, psf).length > 0) &&
-            (msf.length === 0 || _.intersection(ms, msf).length > 0) &&
-            (ssf.length === 0 || _.intersection(ss, ssf).length > 0) &&
-            this.selectedWord === "") ||
-          containsWord
+          (this.selectedWord === "" || containsWord) &&
+          (tsf.length === 0 || _.intersection(ts, tsf).length > 0) &&
+          (psf.length === 0 || _.intersection(ps, psf).length > 0) &&
+          (msf.length === 0 || _.intersection(ms, msf).length > 0) &&
+          (ssf.length === 0 || _.intersection(ss, ssf).length > 0)
         );
       });
     },
