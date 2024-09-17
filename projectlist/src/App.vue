@@ -64,7 +64,7 @@ q-layout(view="lHh Lpr lff")
               outlined,
               dense,
               clearable,
-              :options="Object.keys(filter.Supervisor)",
+              :options="orderedSupers",
               v-model="selectedSupervisor",
               @input="updateSupervisor"
             )
@@ -281,6 +281,12 @@ export default {
     },
   },
   computed: {
+    orderedSupers() {
+      // console.log(this.filter.Supervisor);
+      return _.sortBy(Object.keys(this.filter.Supervisor), [
+        (o) => _.last(o.split(" ")),
+      ]);
+    },
     allWords() {
       // console.log(this.projects);
       const allw = _.countBy(
@@ -295,6 +301,7 @@ export default {
           (w) =>
             !_.includes(["project", "will", "use", "(e.g.,"], w) &&
             !w.startsWith("http:") &&
+            !w.startsWith("https:") &&
             !w.startsWith("[")
         )
       );
