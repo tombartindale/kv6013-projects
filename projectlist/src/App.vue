@@ -29,7 +29,7 @@ q-layout(view="lHh Lpr lff")
           .col-auto
             .text-body2.text-overline.text-uppercase Filter
         .row.justify-center
-          .col-auto
+          .col-auto.text-center
             //- div {{ selectedSupervisor }}
 
             q-chip(
@@ -95,7 +95,10 @@ q-layout(view="lHh Lpr lff")
                   @click="onWordClick(props.text)",
                   :class="{ 'text-primary': selectedWord === props.text }"
                 ) {{ props.text }}
-        .text-h6.q-ma-xl.text-center(v-if="approved.length === 0") There are no projects listed yet...
+        .text-h6.q-ma-xl.text-center(v-if="filtered.length === 0") There are no projects matching this filter...
+        .row.justify-center.q-mt-xl(v-if="filtered.length")
+          .col-auto
+            .text-h5.text-primary Showing {{ filtered.length }} projects from {{ currentSupers }} supervisors
         .row.q-col-gutter-lg.q-mt-xl.justify-center
           .col-12.col-sm-6.col-md-4(v-for="project of filtered")
             q-card.full-height(flat, bordered, square)
@@ -281,6 +284,9 @@ export default {
     },
   },
   computed: {
+    currentSupers() {
+      return _.uniq(_.map(this.filtered, "Supervisor.DisplayName")).length;
+    },
     orderedSupers() {
       // console.log(this.filter.Supervisor);
       return _.sortBy(Object.keys(this.filter.Supervisor), [
