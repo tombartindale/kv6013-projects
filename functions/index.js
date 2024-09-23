@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
-const port = 3000;
-const bodyParser = require("body-parser");
+// const port = 3000;
+// const bodyParser = require("body-parser");
+const functions = require("firebase-functions");
+
 const PizZip = require("pizzip");
 const Docxtemplater = require("docxtemplater");
 
@@ -62,7 +64,7 @@ function transformVars(varsIn) {
   };
 }
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 app.post("/dump", (req, res) => {
   fs.writeFileSync("projects.json", JSON.stringify(req.body));
@@ -140,9 +142,9 @@ app.post("/info", (req, res) => {
   return res.send(result);
 });
 
-app.listen(port, () => {
-  console.log(`PDF Renderer running on ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`PDF Renderer running on ${port}`);
+// });
 
 function renderDoc(name, data) {
   // PizZip is required because docx/pptx/xlsx files are all zipped files, and
@@ -180,3 +182,5 @@ function renderDoc(name, data) {
   //   fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
   return buf;
 }
+
+exports.app = functions.https.onRequest(app);
