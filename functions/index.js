@@ -16,7 +16,7 @@ const Handlebars = require("handlebars");
 const mapping = require("./mapping.json");
 
 function transformVars(varsIn) {
-  let output = {};
+  const output = {};
 
   varsIn = { ...varsIn.form, student: varsIn.student.value[0] };
 
@@ -28,7 +28,9 @@ function transformVars(varsIn) {
       let data = varsIn[key];
       try {
         data = JSON.parse(varsIn[key]);
-      } catch {}
+      } catch {
+        //error
+      }
       output[mapping[key].name] = data;
     } catch {
       output[key] = varsIn[key];
@@ -106,7 +108,8 @@ app.post("/summary", (req, res) => {
   const result = renderDoc("summary.docx", transformVars(req.body));
 
   //DEBUG:
-  fs.writeFileSync(path.resolve(__dirname, "summary_test.docx"), result);
+  if (process.env.FUNCTIONS_EMULATOR === "true")
+    fs.writeFileSync(path.resolve(__dirname, "summary_test.docx"), result);
 
   return res.send(result);
 });
@@ -123,7 +126,8 @@ app.post("/consent", (req, res) => {
   const result = renderDoc("consent.docx", transformVars(req.body));
 
   //DEBUG:
-  fs.writeFileSync(path.resolve(__dirname, "consent_test.docx"), result);
+  if (process.env.FUNCTIONS_EMULATOR === "true")
+    fs.writeFileSync(path.resolve(__dirname, "consent_test.docx"), result);
 
   return res.send(result);
 });
@@ -131,13 +135,16 @@ app.post("/consent", (req, res) => {
 app.post("/info", (req, res) => {
   //render PDF based on the information sent:
 
+  console.log(process.env.FUNCTIONS_EMULATOR);
+
   console.log(req.body);
   console.log(transformVars(req.body));
 
   const result = renderDoc("info.docx", transformVars(req.body));
 
   //DEBUG:
-  fs.writeFileSync(path.resolve(__dirname, "info_test.docx"), result);
+  if (process.env.FUNCTIONS_EMULATOR === "true")
+    fs.writeFileSync(path.resolve(__dirname, "info_test.docx"), result);
 
   return res.send(result);
 });
@@ -183,4 +190,4 @@ function renderDoc(name, data) {
   return buf;
 }
 
-exports.app = functions.https.onRequest(app);
+exports.app = functions.region("europe-west2").https.onRequest(app);
