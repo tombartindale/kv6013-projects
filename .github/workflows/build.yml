@@ -42,7 +42,7 @@ jobs:
       - name: Get Data
         env: # Or as an environment variable
           PROJECTS_FILE: ${{ secrets.PROJECTS_FILE }}
-        run: mkdir ./data && wget -O ./data/projects.json $PROJECTS_FILE && npm run proprocess
+        run: mkdir ./data && wget -O ./data/projects.json $PROJECTS_FILE && npm run preprocess
       - name: Build
         run: npm run build
       - name: Upload artifact
