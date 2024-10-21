@@ -55,14 +55,13 @@ function transformVars(varsIn) {
     output.thirdparty = true;
   }
 
+  if (_.includes(output.storage_procedure, "standard university procedure")) {
+    output.default_storage = true;
+  } else output.default_storage = false;
+
   return {
     ...output,
     student_name: output.student.DisplayName,
-    // project_title: "TEST TITLE",
-    // student_id: "12345678910",
-    // student_name: "Tom Bartindale",
-    // video: true, //turns on video in consent
-    // audio: true, // turns on audio in consent
   };
 }
 
