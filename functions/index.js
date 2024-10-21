@@ -37,7 +37,27 @@ function transformVars(varsIn) {
     }
   }
 
-  // console.log(output.collection_methods);
+  let ff = JSON.parse(output.additional_files);
+  // output.add_files = [];
+  output.afiles = [];
+
+  for (let f of ff) {
+    afiles.push({
+      name: f.name,
+      link: f.link,
+    });
+  }
+
+  let fd = JSON.parse(output.risk_files);
+  // output.add_files = [];
+  output.rfiles = [];
+
+  for (let f of fd) {
+    rfiles.push({
+      name: f.name,
+      link: f.link,
+    });
+  }
 
   if (_.some(output.collection_methods, (r) => _.includes(r, "video"))) {
     output.video = true;
@@ -53,6 +73,23 @@ function transformVars(varsIn) {
     )
   ) {
     output.thirdparty = true;
+  }
+
+  if (
+    _.includes(
+      output.no_data,
+      "I am not using any data that has come from a person at any point"
+    )
+  ) {
+    output.no_humans = true;
+  }
+
+  if (_.includes(output.no_data, "secondary")) {
+    output.is_secondary = true;
+  }
+
+  if (output.full_ethics == "Yes") {
+    output.needs_full_ethics = true;
   }
 
   if (_.includes(output.storage_procedure, "standard university procedure")) {

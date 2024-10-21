@@ -13,6 +13,21 @@ Your role is to check that the proposed work fits within the pre-approved module
 #### Purpose of study:
 {{purpose}}
 
+{{#if no_humans}}
+
+Project reports no ethics required. Please confirm with above information before approval.
+
+{{else}}
+
+{{#if needs_full_ethics}}
+
+Project needs or has full ethics - check documentation attached before approval.
+
+{{else}}
+
+{{#if is_secondary}}
+
+{{else}}
 ### Recruitment
 
 Recruiting {{participant_number}} people from {{participant_description}}.
@@ -32,9 +47,14 @@ Recruiting {{participant_number}} people from {{participant_description}}.
 {{participant_disadvantages}}
 
 #### Withdrawal conditions:
-{{withdrawal}}
+{{withdraw}}
+
+{{/if}}
 
 ### Data
+
+#### Secondary data source
+{{secondary_source}}
 
 #### What data?
 {{data_identifiable}}, {{data_nonidentifiable}}
@@ -54,20 +74,33 @@ Recruiting {{participant_number}} people from {{participant_description}}.
 - {{this}}
 {{/each}}
 
+{{#if is_secondary}}
+
+{{else}}
+
 #### Data Management
 
 {{storage_procedure}}
 
-{{#if risk_files.length}}
+{{/if}}
+
+{{/if}}
+{{/if}}
+
+### Additional Information
+
+{{reviewer_info}}
+
+{{#if rfiles.length}}
 #### Extra Risk Assessments
-{{#each risk_files}}
-- {{this.link}}
+{{#each rfiles}}
+- ({{this.name}}) {{this.link}}
 {{/each}}
 {{/if}}
 
-{{#if additional_files.length}}
+{{#if afiles.length}}
 #### Extra Files
-{{#each additional_files}}
-- {{this.link}}
+{{#each afiles}}
+- ({{this.name}}) {{this.link}}
 {{/each}}
 {{/if}}
