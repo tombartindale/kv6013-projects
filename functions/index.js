@@ -36,27 +36,34 @@ function transformVars(varsIn) {
       output[key] = varsIn[key];
     }
   }
-
-  let ff = JSON.parse(output.additional_files);
-  // output.add_files = [];
   output.afiles = [];
+  try {
+    let ff = JSON.parse(output.additional_files);
+    // output.add_files = [];
 
-  for (let f of ff) {
-    afiles.push({
-      name: f.name,
-      link: f.link,
-    });
+    for (let f of ff) {
+      afiles.push({
+        name: f.name,
+        link: f.link,
+      });
+    }
+  } catch {
+    //no files
   }
 
-  let fd = JSON.parse(output.risk_files);
-  // output.add_files = [];
   output.rfiles = [];
+  try {
+    let fd = JSON.parse(output.risk_files);
+    // output.add_files = [];
 
-  for (let f of fd) {
-    rfiles.push({
-      name: f.name,
-      link: f.link,
-    });
+    for (let f of fd) {
+      rfiles.push({
+        name: f.name,
+        link: f.link,
+      });
+    }
+  } catch {
+    //no files
   }
 
   if (_.some(output.collection_methods, (r) => _.includes(r, "video"))) {
