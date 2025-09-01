@@ -23,7 +23,7 @@ q-layout(view="lHh Lpr lff")
               unelevated,
               color="black",
               target="_BLANK",
-              href="https://livenorthumbriaac-my.sharepoint.com/:l:/g/personal/tom_bartindale_northumbria_ac_uk/FEgYMTZjAbJGnjX3MPvfU_cBSUUFy-K7SqsmRu8WOSe9zQ?nav=NzRiNWU3ZGItM2E2MS00NGU2LTk4YzYtZjRmYTQxMjQ1NTVl"
+              href="https://livenorthumbriaac.sharepoint.com/:l:/s/KV6013-ComputingProjectAdmin/FOGd_Mw1a0hLqsiuRc6ZNfwBwIAWcVobUXDLePh2tvjs0Q?nav=ZDNmODg1NzEtNzhkMS00OWEwLTgzNjQtNWY0ODY5NTJiM2Fh"
             ) Submit Preferences
         .row.justify-center
           .col-auto
