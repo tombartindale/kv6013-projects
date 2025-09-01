@@ -324,7 +324,7 @@ export default {
     },
     daysLeft() {
       return Math.round(
-        DateTime.fromFormat("11.10.2024", "dd.MM.yyyy").diffNow("days").days
+        DateTime.fromFormat("11.10.2025", "dd.MM.yyyy").diffNow("days").days
       );
     },
     approved() {
@@ -380,7 +380,6 @@ export default {
   },
 };
 </script>
-
 
 <style scoped>
 .expanded {
