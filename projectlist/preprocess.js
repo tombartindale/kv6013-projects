@@ -10,5 +10,7 @@ for (let d of data) {
   newdata.push(_.omit(d, ["TargetedStudents", "TargetedStudents#Claims"]));
 }
 
+newdata = _.filter(newdata, "Approved");
+
 //save back data:
 fs.writeFileSync("./data/projects.json", JSON.stringify(newdata));
