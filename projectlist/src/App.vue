@@ -135,7 +135,7 @@ q-layout(view="lHh Lpr lff")
 
                     //- div {{ project }}
                     .row
-                      .text-overline Tags
+                      .text-overline.text-grey Tags
                     .row
                       q-chip(
                         v-for="tag of project.TechnicalSkillsRequired",
@@ -157,6 +157,12 @@ q-layout(view="lHh Lpr lff")
                   //- .text-small.absolute-bottom-right.q-pa-xs.q-pr-sm.text-grey(
                   //-   style="font-size: 12px"
                   //- ) added {{ project.Modified }}
+                q-separator
+                .col-auto
+                  q-card-section
+                    .row
+                      .text-overline.text-grey What are we solving?
+                    span &ldquo;{{project.ExampleResearchQuestion}}&rdquo;
                 q-separator
                 .col-auto
                   q-card-section
