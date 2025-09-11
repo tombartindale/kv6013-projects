@@ -6,10 +6,11 @@ let newdata = [];
 
 //strip out fields from data:
 
-newdata = _.filter(data, (f) => f.TargetedStudents.length == 0);
+// newdata = _.filter(data, (f) => f.TargetedStudents.length == 0);
 
-for (let d of newdata) {
-  newdata.push(_.omit(d, ["TargetedStudents", "TargetedStudents#Claims"]));
+for (let d of data) {
+  if (d["TargetedStudents#Claims@odata.type"].length == 0)
+    newdata.push(_.omit(d, ["TargetedStudents", "TargetedStudents#Claims"]));
 }
 
 newdata = _.filter(newdata, "Approved");
