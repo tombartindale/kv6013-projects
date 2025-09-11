@@ -6,12 +6,13 @@ let newdata = [];
 
 //strip out fields from data:
 
-for (let d of data) {
+newdata = _.filter(data, (f) => f.TargetedStudents.length == 0);
+
+for (let d of newdata) {
   newdata.push(_.omit(d, ["TargetedStudents", "TargetedStudents#Claims"]));
 }
 
 newdata = _.filter(newdata, "Approved");
-newdata = _.filter(newdata, (f) => f.TargetedStudents.length == 0);
 
 //save back data:
 fs.writeFileSync("./data/projects.json", JSON.stringify(newdata));
