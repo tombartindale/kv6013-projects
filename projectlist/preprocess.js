@@ -9,7 +9,7 @@ let newdata = [];
 // newdata = _.filter(data, (f) => f.TargetedStudents.length == 0);
 
 for (let d of data) {
-  if (d["TargetedStudents#Claims@odata.type"].length == 0)
+  if (d["TargetedStudents"].length == 0)
     newdata.push(_.omit(d, ["TargetedStudents", "TargetedStudents#Claims"]));
 }
 
