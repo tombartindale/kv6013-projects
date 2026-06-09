@@ -3,6 +3,16 @@ const fs = require("fs").promises;
 const _ = require("lodash");
 const xlsx = require("xlsx");
 
+function getSupervisorMax(supervisor, data) {
+  //   console.log(supervisor);
+
+  const s = _.find(data, (f) => f["Full name"] === supervisor);
+
+  //   console.log(s);
+  //   if (!s) console.log(supervisor);
+  return s?.Allocation ?? "?";
+}
+
 async function go() {
   const spreadSheet = xlsx.read(await fs.readFile("./allocation.xlsx"), {
     raw: true,
@@ -15,6 +25,10 @@ async function go() {
   let allocation = {};
 
   const projects = xlsx.utils.sheet_to_json(spreadSheet.Sheets["Projects"]);
+
+  const allSupervisors = xlsx.utils.sheet_to_json(
+    spreadSheet.Sheets["Supervisors"]
+  );
 
   //allocate all targeted projects
   for (let pro of projects) {
@@ -31,13 +45,17 @@ async function go() {
     }
   }
 
-  console.log(projects);
+  //   console.log(projects);
 
   //allocated all first preferences (until full)
 
   //allocated
 
   let firstPro = _.groupBy(preferences, "FirstPreference");
+
+  let secondPro = _.groupBy(preferences, "SecondPreference");
+
+  let thirdPro = _.groupBy(preferences, "ThirdPreference");
 
   //   for (let first of firstPro) {
   //     console.log(first);
@@ -47,12 +65,22 @@ async function go() {
     //normal project:
     if (!pro.TargetedStudents) {
       try {
-        let prefs = _.map(firstPro[pro.ID], "studentid");
+        // let prefs = _.map(firstPro[pro.ID], "studentid");
         // console.log(firstPro[pro.ID]);
-        allocation[pro.ID] = firstPro[pro.ID];
-      } catch {}
+        // console.log(secondPro[pro.ID]);
+        // console.log
+        //
+
+        allocation[pro.ID] = _.compact(
+          _.concat(firstPro[pro.ID], secondPro[pro.ID], thirdPro[pro.ID])
+        );
+      } catch (e) {
+        console.error(e);
+      }
     }
   }
+
+  //   console.log(allocation);
 
   let supervisors = _.groupBy(projects, "Supervisor");
 
@@ -61,18 +89,26 @@ async function go() {
   //for each project, get title and name of supervisor:
   let output = "";
 
-  output += `"Project","Max. Students","Targeted Student","Possible Student","Possible Student","Possible Student","Possible Student","Possible Student","Possible Student"`;
+  output += `"Project","Max. Students","Targeted Student","Possible Student","Possible Student","Possible Student","Possible Student","Possible Student","Possible Student","Possible Student","Possible Student","Possible Student","Possible Student"`;
+
+  console.log(supervisors["undefined"]);
 
   for (let supervisor of Object.keys(supervisors)) {
-    output += `\r\n\r\n${supervisor}\r\n\r\n`;
+    // console.log(supervisors[supervisor]);
+    output += `\r\n\r\n"${supervisor}","${getSupervisorMax(
+      supervisor,
+      allSupervisors
+    )}"\r\n\r\n`;
     for (let project of supervisors[supervisor]) {
-      output += `"${project.Title}","${project["Max. Number of students who could work on this project"]}",`;
+      output += `"${project.ID} ${project.Title}","${project["Max. Number of students who could work on this project"]}",`;
 
       //   console.log(project);
 
       //   console.log(allocation[project.ID]);
       if (allocation[project.ID]?.TargetedStudent)
-        output += `"${allocation[project.ID].TargetedStudent}",`;
+        output += `"${
+          allocation[project.ID].TargetedStudent
+        }","Automatically allocated"`;
       else {
         output += `"",`;
         if (allocation[project.ID])
