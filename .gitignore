@@ -7,3 +7,4 @@ projects.json
 dist
 *.log
 preferences.json
+*.csv
