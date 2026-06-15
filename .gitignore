@@ -8,3 +8,5 @@ dist
 *.log
 preferences.json
 *.csv
+# raw brief bank — contains admin/supervisor data, never commit
+Project_Brief_Bank.json
