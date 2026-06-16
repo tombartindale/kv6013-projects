@@ -1,6 +1,6 @@
 {
   "module": "KV6013",
-  "bank_version": "final-2026-06-09",
+  "bank_version": "final-2026-06-16",
   "n_briefs": 55,
   "briefs": [
     {
@@ -101,9 +101,7 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P05",
@@ -118,14 +116,8 @@
         "A comparison of machine-learning models for fake-news detection on the LIAR dataset.",
         "A hybrid multimodal system detecting fake news from combined text and image content."
       ],
-      "methods_it_might_involve": [
-        "Model evaluation",
-        "NLP",
-        "Supervised ML"
-      ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "methods_it_might_involve": ["Model evaluation", "NLP", "Supervised ML"],
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P06",
@@ -146,10 +138,7 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": [
-        "C/C++",
-        "Python"
-      ]
+      "technologies_it_might_use": ["C/C++", "Python"]
     },
     {
       "id": "P07",
@@ -171,9 +160,7 @@
         "Signal processing",
         "Supervised ML"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P08",
@@ -194,9 +181,7 @@
         "Supervised ML",
         "System design"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P09",
@@ -217,10 +202,7 @@
         "Signal processing",
         "Supervised ML"
       ],
-      "technologies_it_might_use": [
-        "OpenCV",
-        "Python"
-      ]
+      "technologies_it_might_use": ["OpenCV", "Python"]
     },
     {
       "id": "P10",
@@ -240,9 +222,7 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P11",
@@ -262,9 +242,7 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P12",
@@ -303,10 +281,7 @@
         "A retrieval-augmented-generation system over cybersecurity knowledge bases (MITRE ATT&CK, CVEs) to support red-team analysis.",
         "An NLP chatbot to improve how charities communicate with beneficiaries, volunteers and donors."
       ],
-      "methods_it_might_involve": [
-        "Model evaluation",
-        "NLP"
-      ],
+      "methods_it_might_involve": ["Model evaluation", "NLP"],
       "technologies_it_might_use": [
         "JavaScript",
         "LLM APIs",
@@ -354,10 +329,7 @@
         "A study of data-storage and network-security measures for a ROS2 road-inspection robot handling critical-infrastructure data.",
         "An autonomous road-inspection robot built in ROS2 and tested in Gazebo simulation to detect road hazards such as potholes."
       ],
-      "methods_it_might_involve": [
-        "Robotics",
-        "Simulation"
-      ],
+      "methods_it_might_involve": ["Robotics", "Simulation"],
       "technologies_it_might_use": [
         "C/C++",
         "OpenCV",
@@ -384,9 +356,7 @@
         "Reinforcement learning",
         "Simulation"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P17",
@@ -406,10 +376,7 @@
         "Signal processing",
         "Supervised ML"
       ],
-      "technologies_it_might_use": [
-        "Python",
-        "Sensor hardware"
-      ]
+      "technologies_it_might_use": ["Python", "Sensor hardware"]
     },
     {
       "id": "P18",
@@ -429,11 +396,7 @@
         "Model evaluation",
         "Simulation"
       ],
-      "technologies_it_might_use": [
-        "C/C++",
-        "Network simulation",
-        "Python"
-      ]
+      "technologies_it_might_use": ["C/C++", "Network simulation", "Python"]
     },
     {
       "id": "P19",
@@ -453,9 +416,7 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P20",
@@ -476,9 +437,7 @@
         "Deep learning",
         "Feature engineering"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P21",
@@ -523,11 +482,7 @@
         "NLP",
         "Security analysis"
       ],
-      "technologies_it_might_use": [
-        "LLM APIs",
-        "Network simulation",
-        "Python"
-      ]
+      "technologies_it_might_use": ["LLM APIs", "Network simulation", "Python"]
     },
     {
       "id": "P23",
@@ -569,10 +524,7 @@
         "Security analysis",
         "System design"
       ],
-      "technologies_it_might_use": [
-        "Python",
-        "Static analysis tools"
-      ]
+      "technologies_it_might_use": ["Python", "Static analysis tools"]
     },
     {
       "id": "P25",
@@ -591,12 +543,7 @@
         "Model evaluation",
         "Simulation"
       ],
-      "technologies_it_might_use": [
-        "C#",
-        "LLM APIs",
-        "Survey tools",
-        "Unity"
-      ]
+      "technologies_it_might_use": ["C#", "LLM APIs", "Survey tools", "Unity"]
     },
     {
       "id": "P26",
@@ -629,7 +576,7 @@
       "specialism_tag": "Security (human factors)",
       "specialism_family": "Security",
       "project_type_1to5": 1,
-      "generic_brief": "Investigate human or contextual factors affecting security or compliance behaviour (e.g. age-verification compliance), with study and analysis informing design. Student refines the behaviour.",
+      "generic_brief": "Investigate human or contextual factors affecting security or compliance behaviour (e.g. age-verification compliance). The findings must produce a defined output — security/compliance design requirements, a behavioural framework situated in the literature, or a prototype intervention evaluated with users. Student refines the behaviour. [SCREENING: a behavioural study alone does not meet the UG bar.]",
       "worked_examples": [
         "An investigation of the implementation and contextual factors affecting user compliance with online age-verification measures."
       ],
@@ -639,11 +586,7 @@
         "Statistical analysis",
         "User research"
       ],
-      "technologies_it_might_use": [
-        "Python",
-        "R",
-        "Survey tools"
-      ]
+      "technologies_it_might_use": ["Python", "R", "Survey tools"]
     },
     {
       "id": "P28",
@@ -665,9 +608,7 @@
         "NLP",
         "Supervised ML"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P29",
@@ -676,7 +617,7 @@
       "specialism_tag": "Security (human factors)",
       "specialism_family": "Security",
       "project_type_1to5": 1,
-      "generic_brief": "Study how cybersecurity awareness or knowledge transfer works in organisations or social networks, measuring effectiveness/fidelity. Student refines population and intervention.",
+      "generic_brief": "Study how cybersecurity awareness or knowledge transfer works in organisations or social networks, measuring effectiveness/fidelity, then turn the findings into a defined output — training/awareness design requirements, a framework situated in the literature, or an awareness intervention or tool evaluated with users. Student refines population and intervention. [SCREENING: a measurement study alone does not meet the UG bar.]",
       "worked_examples": [
         "A longitudinal qualitative study of how social interaction shapes people's understanding of SIM-swapping fraud.",
         "A comparison of video versus gamified cybersecurity-awareness methods for learning and communicating security advice.",
@@ -708,10 +649,7 @@
         "A comparison of path-planning algorithms (Dijkstra, A*, Theta*) for routing offshore wind-farm subsea cables.",
         "The design and evaluation of a multi-hop wireless sensor network built with ESP32 microcontrollers, comparing routing protocols."
       ],
-      "methods_it_might_involve": [
-        "Prototyping",
-        "Security analysis"
-      ],
+      "methods_it_might_involve": ["Prototyping", "Security analysis"],
       "technologies_it_might_use": [
         "C/C++",
         "Network simulation",
@@ -738,10 +676,7 @@
         "System design",
         "Visualisation"
       ],
-      "technologies_it_might_use": [
-        "Cloud platforms",
-        "Python"
-      ]
+      "technologies_it_might_use": ["Cloud platforms", "Python"]
     },
     {
       "id": "P32",
@@ -761,9 +696,7 @@
         "NLP",
         "Security analysis"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P33",
@@ -783,10 +716,7 @@
         "System design",
         "Usability evaluation"
       ],
-      "technologies_it_might_use": [
-        "C#",
-        "Python"
-      ]
+      "technologies_it_might_use": ["C#", "Python"]
     },
     {
       "id": "P34",
@@ -807,12 +737,7 @@
         "Usability evaluation",
         "User research"
       ],
-      "technologies_it_might_use": [
-        "JavaScript",
-        "Python",
-        "SQL",
-        "Web stack"
-      ]
+      "technologies_it_might_use": ["JavaScript", "Python", "SQL", "Web stack"]
     },
     {
       "id": "P35",
@@ -856,9 +781,7 @@
         "System design",
         "User research"
       ],
-      "technologies_it_might_use": [
-        "Static analysis tools"
-      ]
+      "technologies_it_might_use": ["Static analysis tools"]
     },
     {
       "id": "P37",
@@ -867,7 +790,7 @@
       "specialism_tag": "Data science (health)",
       "specialism_family": "Health & Wellbeing Computing",
       "project_type_1to5": 1,
-      "generic_brief": "Use existing public datasets (plus light qualitative sources) to analyse barriers, motivators or satisfaction in a population (e.g. hearing-aid adoption). Student refines the domain. [SCREENING: analysis must inform/feed a prototype to meet the UG bar.]",
+      "generic_brief": "Use existing public datasets (plus light qualitative sources) to analyse barriers, motivators or satisfaction in a population (e.g. hearing-aid adoption). Student refines the domain. [SCREENING: analysis must feed a defined output — design requirements, a literature-situated framework, or a prototype — to meet the UG bar.]",
       "worked_examples": [
         "A study of the barriers and motivators affecting hearing-aid satisfaction and use among adults aged 50 and over.",
         "An analysis of hearing-aid satisfaction among elderly users using secondary data from the English Longitudinal Study of Ageing.",
@@ -879,12 +802,7 @@
         "Statistical analysis",
         "User research"
       ],
-      "technologies_it_might_use": [
-        "JavaScript",
-        "Python",
-        "R",
-        "Web stack"
-      ]
+      "technologies_it_might_use": ["JavaScript", "Python", "R", "Web stack"]
     },
     {
       "id": "P38",
@@ -904,9 +822,7 @@
         "Model evaluation",
         "Statistical analysis"
       ],
-      "technologies_it_might_use": [
-        "Python"
-      ]
+      "technologies_it_might_use": ["Python"]
     },
     {
       "id": "P39",
@@ -915,7 +831,7 @@
       "specialism_tag": "Data science",
       "specialism_family": "Data Science & Analytics",
       "project_type_1to5": 1,
-      "generic_brief": "Analyse and visualise patterns in public crime or socio-economic datasets (theft, shoplifting, house prices, business survival), addressing bias/fairness where relevant. Student refines dataset and question.",
+      "generic_brief": "Analyse and visualise patterns in public crime or socio-economic datasets (theft, shoplifting, house prices, business survival), addressing bias/fairness where relevant, and deliver a defined output beyond the analysis — an interactive tool or dashboard, a set of decision/design requirements, or a fairness framework situated in the literature. Student refines dataset and question. [SCREENING: analysis and visualisation alone do not meet the UG bar.]",
       "worked_examples": [
         "A data analysis and visualisation of factors influencing shoplifting in the Northumbria Police area using open crime data.",
         "A data-engineering and visualisation pipeline analysing spatial and temporal patterns of theft-from-the-person across ten London boroughs.",
@@ -926,10 +842,7 @@
         "Statistical analysis",
         "Visualisation"
       ],
-      "technologies_it_might_use": [
-        "Python",
-        "SQL"
-      ]
+      "technologies_it_might_use": ["Python", "SQL"]
     },
     {
       "id": "P40",
@@ -949,10 +862,7 @@
         "Model evaluation",
         "Visualisation"
       ],
-      "technologies_it_might_use": [
-        "Python",
-        "SQL"
-      ]
+      "technologies_it_might_use": ["Python", "SQL"]
     },
     {
       "id": "P41",
@@ -985,7 +895,7 @@
       "specialism_tag": "Data science / open-data analysis",
       "specialism_family": "Data Science & Analytics",
       "project_type_1to5": 1,
-      "generic_brief": "Design a primary survey aligned to questions in a national open dataset, collect and analyse local responses quantitatively and qualitatively, and compare local findings against national trends on a chosen behaviour or attitude question. NOTE: original recruited via a hospital (ethics/access lock); portable variant uses ordinary public recruitment. [SCREENING: primary collection required — pure secondary analysis does not meet the UG bar.]",
+      "generic_brief": "Design a primary survey aligned to questions in a national open dataset, collect and analyse local responses quantitatively and qualitatively, and compare local findings against national trends on a chosen behaviour or attitude question, then translate the findings into a defined output — a set of evidence-based design requirements, or a framework interpreted against the literature. NOTE: original recruited via a hospital (ethics/access lock); portable variant uses ordinary public recruitment. [SCREENING: primary collection required, and the project must deliver design requirements, a literature-situated framework, or a participant-evaluated prototype — collection and analysis alone do not meet the UG bar.]",
       "worked_examples": [
         "A study of barriers and motivators for hearing-aid use in adults 50+, comparing a local survey against national datasets (ELSA / EuroTrak).",
         "A study of public attitudes to data privacy comparing a local survey against a national open survey series.",
@@ -997,10 +907,7 @@
         "Statistical analysis",
         "User research"
       ],
-      "technologies_it_might_use": [
-        "Python",
-        "Survey tools"
-      ]
+      "technologies_it_might_use": ["Python", "Survey tools"]
     },
     {
       "id": "P43",
@@ -1050,12 +957,7 @@
         "Usability evaluation",
         "User research"
       ],
-      "technologies_it_might_use": [
-        "Figma",
-        "JavaScript",
-        "SQL",
-        "Web stack"
-      ]
+      "technologies_it_might_use": ["Figma", "JavaScript", "SQL", "Web stack"]
     },
     {
       "id": "P45",
@@ -1145,7 +1047,7 @@
       "specialism_tag": "AI / HCI",
       "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 1,
-      "generic_brief": "Study how people perceive misinformation using eye-tracking or interface experiments, identifying attention patterns or design factors. Student refines the stimulus and measure.",
+      "generic_brief": "Study how people perceive misinformation using eye-tracking or interface experiments. The attention patterns identified must feed a defined output — interface design requirements, a credibility/attention framework situated in the literature, or a redesigned interface element evaluated with participants. Student refines the stimulus and measure. [SCREENING: an attention study alone does not meet the UG bar — findings must inform design requirements, a literature-situated framework, or a participant-evaluated prototype.]",
       "worked_examples": [
         "An eye-tracking study of how people visually attend to misinformative political imagery compared with accurate news.",
         "An eye-tracking investigation of why readers are vulnerable to political misinformation, identifying attention patterns and credibility cues.",
@@ -1220,7 +1122,7 @@
       "specialism_tag": "HCI / data",
       "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 1,
-      "generic_brief": "Investigate how users experience a social-media platform or recommender mechanism (TikTok, algorithmic bubbles), using behavioural, ethnographic or simulation methods. Student refines platform and method.",
+      "generic_brief": "Investigate how users experience a social-media platform or recommender mechanism (TikTok, algorithmic bubbles) using behavioural, ethnographic or simulation methods, then convert the insight into a defined output — design requirements or solutions, a framework discussed against the literature, or a prototype intervention taken back to users. Student refines platform and method. [SCREENING: an experience study alone does not meet the UG bar — it must deliver design requirements, a literature-situated framework, or a participant-evaluated prototype.]",
       "worked_examples": [
         "A study of the cybersecurity and privacy risks young people face using TikTok for informal learning, with proposed design solutions.",
         "An investigation into whether K-means clustering stays stable as social-media users' behaviour and preferences shift over time.",
@@ -1231,11 +1133,7 @@
         "Qualitative analysis",
         "User research"
       ],
-      "technologies_it_might_use": [
-        "Python",
-        "R",
-        "Survey tools"
-      ]
+      "technologies_it_might_use": ["Python", "R", "Survey tools"]
     },
     {
       "id": "P52",
