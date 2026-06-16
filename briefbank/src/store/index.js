@@ -19,8 +19,9 @@ export const useBriefBankStore = defineStore('briefbank', {
       bankError: null,
       shortlist: p.shortlist || [],
       shortlistArea: p.shortlistArea || '',
-      student: p.student || { id: '', programme: '' },
+      student: p.student || { id: '', email: '' },
       submitted: null,
+      pitchDialogOpen: false,
     };
   },
 
@@ -34,11 +35,12 @@ export const useBriefBankStore = defineStore('briefbank', {
       });
       return Object.keys(byArea).map((name) => {
         const briefs = byArea[name];
-        const programmes = [
-          ...new Set(briefs.map((b) => b.programmes).filter(Boolean)),
-        ].join(', ');
-        return { name, briefs, count: briefs.length, programmes };
+        return { name, briefs, count: briefs.length };
       });
+    },
+
+    allBriefs(state) {
+      return state.bank?.briefs ?? [];
     },
 
     briefsByArea: (state) => (areaName) => {
@@ -58,9 +60,9 @@ export const useBriefBankStore = defineStore('briefbank', {
         .filter(Boolean);
     },
 
-    canSubmit: (state) => state.shortlist.length >= 1,
+    canSubmit: (state) => state.shortlist.length >= 3,
     isInShortlist: (state) => (id) => state.shortlist.includes(id),
-    shortlistFull: (state) => state.shortlist.length >= 4,
+    shortlistFull: (state) => state.shortlist.length >= 3,
   },
 
   actions: {
@@ -76,7 +78,7 @@ export const useBriefBankStore = defineStore('briefbank', {
     },
 
     addToShortlist(briefId) {
-      if (this.shortlist.includes(briefId) || this.shortlist.length >= 4) return;
+      if (this.shortlist.includes(briefId) || this.shortlist.length >= 3) return;
       const brief = this.bank?.briefs.find((b) => b.id === briefId);
       if (!brief) return;
       this.shortlist.push(briefId);
@@ -108,10 +110,8 @@ export const useBriefBankStore = defineStore('briefbank', {
 
     submitRanking() {
       const payload = {
-        module: this.bank.module,
-        bank_version: this.bank.bank_version,
-        student: { ...this.student },
-        area: this.shortlistArea,
+        student_id: this.student.id,
+        email: this.student.email,
         ranking: [...this.shortlist],
         submitted_at: new Date().toISOString(),
       };

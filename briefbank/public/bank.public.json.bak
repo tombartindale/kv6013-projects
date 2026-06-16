@@ -8,7 +8,6 @@
       "title": "Responsible-AI tool / resource for a practice or education setting",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI applications",
-      "specialism_family": "AI Applications",
       "project_type_1to5": 4,
       "generic_brief": "Design and evaluate an AI-assisted tool, activity or resource that supports responsible/ethical AI use or learning for a defined user group. Student refines users and task. The tool is shaped by user research with a defined professional user group (e.g. interviews/questionnaires) and evaluated with them.",
       "worked_examples": [
@@ -17,26 +16,24 @@
         "Interactive learning activities supporting responsible-AI assessment in law-enforcement contexts."
       ],
       "methods_it_might_involve": [
-        "Experiment design",
-        "Model evaluation",
-        "Usability evaluation",
-        "User research"
+        "User/stakeholder research",
+        "learning-resource or activity design",
+        "responsible-AI evaluation",
+        "usability testing"
       ],
       "technologies_it_might_use": [
+        "Web/mobile frameworks",
+        "LLM/AI APIs",
         "Figma",
-        "JavaScript",
-        "LLM APIs",
-        "Mobile frameworks",
-        "Survey tools",
-        "Web stack"
-      ]
+        "survey tools"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P02",
       "title": "AI-powered visual / design assistant tool",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI applications",
-      "specialism_family": "AI Applications",
       "project_type_1to5": 5,
       "generic_brief": "Build and evaluate an AI tool that generates or analyses visual content for a user task (interior design, virtual try-on, data visualisation). Student refines the domain.",
       "worked_examples": [
@@ -45,24 +42,23 @@
         "A web-based tool for interactive analysis and visualisation of international student-survey data."
       ],
       "methods_it_might_involve": [
-        "Deep learning",
-        "Model evaluation",
-        "Prototyping",
-        "Usability evaluation"
+        "Generative/vision-model integration",
+        "prototyping",
+        "user evaluation of generated outputs"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
-        "LLM APIs",
-        "Python",
-        "Web stack"
-      ]
+        "Python/JavaScript",
+        "diffusion or vision models (Stable Diffusion, segmentation)",
+        "web frontend",
+        "model APIs"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P03",
       "title": "AI decision-support / explainable analysis tool for a user group",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI applications",
-      "specialism_family": "AI Applications",
       "project_type_1to5": 4,
       "generic_brief": "Build and evaluate an AI decision-support or explainable-analysis tool for a defined user group or behaviour. Student refines users, data and explainability approach.",
       "worked_examples": [
@@ -71,24 +67,24 @@
         "An explainable-AI model interpreting driving behaviour under varying environmental conditions."
       ],
       "methods_it_might_involve": [
-        "Interaction design",
-        "Model evaluation",
-        "Supervised ML",
-        "Usability evaluation"
+        "ML modelling",
+        "explainability (SHAP/LIME)",
+        "decision-support UI design",
+        "user evaluation"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
-        "LLM APIs",
-        "Python",
-        "Web stack"
-      ]
+        "Python, scikit-learn",
+        "SHAP/LIME",
+        "web frontend",
+        "LLM APIs"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P04",
       "title": "Machine-learning prediction model for a clinical condition",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI / ML (health)",
-      "specialism_family": "Health & Wellbeing Computing",
       "project_type_1to5": 2,
       "generic_brief": "Build and compare ML/DL models predicting or detecting a clinical condition (e.g. Alzheimer's, Parkinson's) on a real dataset, with explainability. Student refines condition and model family. Models may fuse imaging and tabular clinical data (a multimodal approach) and compare post-hoc explainability techniques.",
       "worked_examples": [
@@ -97,20 +93,24 @@
         "A comparative analysis of machine-learning algorithms for Alzheimer's disease prediction."
       ],
       "methods_it_might_involve": [
-        "Feature engineering",
-        "Model evaluation",
-        "Supervised ML"
+        "Supervised ML/DL",
+        "feature selection",
+        "cross-validation",
+        "explainability",
+        "performance comparison"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, scikit-learn, TensorFlow/PyTorch, LightGBM/TabNet",
+        "clinical open datasets (ADNI, ELSA, Kaggle)",
+        "SHAP"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P05",
       "title": "Machine-learning detection of misinformation / fake news",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI / ML",
-      "specialism_family": "AI & Machine Learning",
       "project_type_1to5": 3,
       "generic_brief": "Build and evaluate ML (incl. multimodal) models that detect misinformation or fake news against a labelled dataset. Student refines modality and model family.",
       "worked_examples": [
@@ -119,20 +119,23 @@
         "A hybrid multimodal system detecting fake news from combined text and image content."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "NLP",
-        "Supervised ML"
+        "NLP/text mining",
+        "(multimodal) supervised classification",
+        "model comparison",
+        "evaluation"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, scikit-learn, Hugging Face transformers",
+        "LIAR/FakeNewsNet datasets",
+        "pandas"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P06",
       "title": "Machine-learning anti-money-laundering detection",
       "area": "AI & Machine Learning",
       "specialism_tag": "Security / ML",
-      "specialism_family": "Security",
       "project_type_1to5": 2,
       "generic_brief": "Compare ML models for detecting money-laundering / illicit transactions in (crypto)financial transaction data. Student refines dataset and model family.",
       "worked_examples": [
@@ -141,22 +144,23 @@
         "An evaluation of alternative machine-learning algorithms for detecting illicit bitcoin transactions on the Elliptic++ dataset."
       ],
       "methods_it_might_involve": [
-        "Data analysis",
-        "Feature engineering",
-        "Model evaluation",
-        "Supervised ML"
+        "Supervised ML",
+        "feature engineering on transaction graphs",
+        "class-imbalance handling",
+        "model comparison"
       ],
       "technologies_it_might_use": [
-        "C/C++",
-        "Python"
-      ]
+        "Python, scikit-learn, XGBoost",
+        "Elliptic/Elliptic++ datasets",
+        "NetworkX, pandas"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P07",
       "title": "Physics-guided machine learning for non-destructive materials evaluation",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI / ML (engineering)",
-      "specialism_family": "AI & Machine Learning",
       "project_type_1to5": 2,
       "generic_brief": "Apply physics-guided / signal features and ML to detection and characterisation on spatio-temporal sensor data (e.g. thermal NDE of CFRP; vibration; sensor arrays), comparing classical analysis against ML. Student refines material/dataset and method.",
       "worked_examples": [
@@ -165,22 +169,23 @@
         "Physics-driven and machine-learning thermographic signal reconstruction for detecting defects in metallic and composite components."
       ],
       "methods_it_might_involve": [
-        "Deep learning",
-        "Feature engineering",
-        "Robotics",
-        "Signal processing",
-        "Supervised ML"
+        "Signal/feature extraction",
+        "physics-guided & ML modelling",
+        "defect detection and depth estimation",
+        "classical-vs-ML comparison"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, scikit-learn, PyTorch",
+        "signal-processing libraries",
+        "thermography / eddy-current datasets"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P08",
       "title": "Machine-learning prediction of molecular / drug toxicity",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI / ML (cheminformatics)",
-      "specialism_family": "AI & Machine Learning",
       "project_type_1to5": 2,
       "generic_brief": "Use ML (incl. graph neural networks, fingerprints, tree ensembles) to predict drug-induced toxicity from molecular data, with explainability and optionally a web tool. Student refines target and representation.",
       "worked_examples": [
@@ -189,21 +194,23 @@
         "An explainable gradient-boosted tree-ensemble model for predicting drug-induced renal toxicity."
       ],
       "methods_it_might_involve": [
-        "Feature engineering",
-        "Model evaluation",
-        "Supervised ML",
-        "System design"
+        "Molecular feature representation (fingerprints/graphs)",
+        "supervised ML",
+        "explainability",
+        "optional web tool"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, RDKit, scikit-learn, tree ensembles/GNNs",
+        "toxicity datasets (Tox21/ToxCast-style)",
+        "Flask/Streamlit"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P09",
       "title": "Explainable AI for remote-sensing / multi-band image analysis",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI / ML (remote sensing)",
-      "specialism_family": "AI & Machine Learning",
       "project_type_1to5": 2,
       "generic_brief": "Apply explainable AI to remote-sensing or multi-band imagery (space debris, VIS-SWIR-LWIR fusion) for a classification task. Student refines the imagery and task.",
       "worked_examples": [
@@ -212,22 +219,24 @@
         "An explainable-AI model for classifying space debris to support orbital-collision risk assessment."
       ],
       "methods_it_might_involve": [
-        "Deep learning",
-        "Model evaluation",
-        "Signal processing",
-        "Supervised ML"
+        "Image classification",
+        "multi-band/sensor fusion",
+        "explainability",
+        "robustness evaluation"
       ],
       "technologies_it_might_use": [
+        "Python, PyTorch/TensorFlow, YOLO",
+        "remote-sensing / multi-band datasets",
         "OpenCV",
-        "Python"
-      ]
+        "Grad-CAM/SHAP"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P10",
       "title": "Explainable deep-learning classification of medical images",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI / ML",
-      "specialism_family": "AI & Machine Learning",
       "project_type_1to5": 2,
       "generic_brief": "Train and evaluate deep-learning models to classify a medical imaging modality (MRI/CT/X-ray/ultrasound/fundus) for a diagnostic task, with explainability (XAI) analysis. Student refines modality and condition.",
       "worked_examples": [
@@ -236,20 +245,23 @@
         "A deep-learning model for detecting and classifying bone fractures from X-ray images."
       ],
       "methods_it_might_involve": [
-        "Deep learning",
-        "Model evaluation",
-        "Supervised ML"
+        "Deep-learning image classification",
+        "transfer learning",
+        "explainability (Grad-CAM)",
+        "performance evaluation"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, PyTorch/TensorFlow, CNNs/ViT",
+        "medical-imaging datasets (Kaggle, MICCAI)",
+        "Grad-CAM/SHAP"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P11",
       "title": "Comparative ML prediction of an environmental or quality metric",
       "area": "AI & Machine Learning",
       "specialism_tag": "Data science / AI",
-      "specialism_family": "AI & Machine Learning",
       "project_type_1to5": 2,
       "generic_brief": "Train and compare ML models to predict an environmental or quality metric (water/air quality, health, sport) from a real public dataset, on agreed metrics. Student refines domain, dataset and models.",
       "worked_examples": [
@@ -258,20 +270,23 @@
         "A comparison of LTE versus GSM connectivity for a low-cost IoT air-quality monitoring system."
       ],
       "methods_it_might_involve": [
-        "Feature engineering",
-        "Model evaluation",
-        "Supervised ML"
+        "Supervised regression/classification",
+        "feature engineering",
+        "model comparison",
+        "evaluation"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, scikit-learn, XGBoost",
+        "open environmental datasets (Environment Agency, Copernicus)",
+        "pandas"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P12",
       "title": "Deep-learning indoor localisation / motion analysis from sensor signals",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI / ML (signals)",
-      "specialism_family": "AI & Machine Learning",
       "project_type_1to5": 2,
       "generic_brief": "Use IMU / Wi-Fi / wearable signals with ML to localise or analyse motion (indoor positioning, dead-reckoning, gait), evaluated for accuracy. Student refines signal source and method.",
       "worked_examples": [
@@ -280,22 +295,24 @@
         "A transformer-based deep-learning approach to indoor pedestrian localisation from smartphone IMU data."
       ],
       "methods_it_might_involve": [
-        "Deep learning",
-        "Model evaluation",
-        "Signal processing"
+        "Sensor signal processing",
+        "sensor fusion",
+        "deep-learning sequence modelling",
+        "error evaluation"
       ],
       "technologies_it_might_use": [
-        "Mobile frameworks",
-        "Python",
-        "Sensor hardware"
-      ]
+        "Python, PyTorch",
+        "IMU datasets (OxIOD)",
+        "signal-processing libraries",
+        "smartphone sensors"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P13",
       "title": "Retrieval-augmented AI chatbot / knowledge assistant for a domain",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI applications",
-      "specialism_family": "AI Applications",
       "project_type_1to5": 5,
       "generic_brief": "Build a RAG-based chatbot or knowledge assistant over a defined document corpus (support, charity, university, cyber-intel), evaluated for answer quality. Student refines the corpus.",
       "worked_examples": [
@@ -304,22 +321,24 @@
         "An NLP chatbot to improve how charities communicate with beneficiaries, volunteers and donors."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "NLP"
+        "Retrieval-augmented generation",
+        "embedding and vector retrieval",
+        "answer-quality evaluation"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
-        "LLM APIs",
         "Python",
-        "Web stack"
-      ]
+        "LLM APIs / local LLMs",
+        "vector DB (FAISS, Chroma)",
+        "LangChain",
+        "web frontend"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P14",
       "title": "Intelligent voice / personal assistant and its risks",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI applications",
-      "specialism_family": "AI Applications",
       "project_type_1to5": 3,
       "generic_brief": "Design or evaluate a voice-driven intelligent assistant for a user group, or investigate the security/usability of consumer voice assistants. Student refines build vs investigation.",
       "worked_examples": [
@@ -328,25 +347,24 @@
         "A study of the security and privacy risks of AI voice assistants and how users perceive their data handling."
       ],
       "methods_it_might_involve": [
-        "Interaction design",
-        "Model evaluation",
-        "NLP",
-        "Security analysis",
-        "Usability evaluation"
+        "Conversational/assistant design",
+        "NLP/speech integration",
+        "security & privacy analysis",
+        "user evaluation"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
+        "Python/JavaScript",
+        "speech & NLP APIs",
         "LLM APIs",
-        "Python",
-        "Sensor hardware"
-      ]
+        "mobile/embedded platforms"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P15",
       "title": "Autonomous robot with perception and onboard intelligence",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI / robotics",
-      "specialism_family": "Robotics & Autonomous Systems",
       "project_type_1to5": 4,
       "generic_brief": "Develop and evaluate an autonomous robot (ROS-based) for inspection or security, integrating perception (RGB-D/vision) and onboard decision-making, with attention to its data security. Student refines platform and task.",
       "worked_examples": [
@@ -355,45 +373,49 @@
         "An autonomous road-inspection robot built in ROS2 and tested in Gazebo simulation to detect road hazards such as potholes."
       ],
       "methods_it_might_involve": [
-        "Robotics",
-        "Simulation"
+        "Robot perception",
+        "control and navigation",
+        "simulation and real-world testing"
       ],
       "technologies_it_might_use": [
-        "C/C++",
+        "ROS2, Gazebo",
+        "Python/C++",
+        "RGB-D/LiDAR sensors",
         "OpenCV",
-        "Python",
-        "ROS2/Gazebo",
-        "Sensor hardware"
-      ]
+        "embedded controllers"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P16",
       "title": "Multi-agent simulation / reinforcement learning for resource allocation",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI",
-      "specialism_family": "AI & Machine Learning",
       "project_type_1to5": 3,
       "generic_brief": "Build a multi-agent simulation or RL approach to a resource-allocation or scalability problem (edge networks, cooperative-competitive systems). Student refines the system.",
       "worked_examples": [
         "A reinforcement-learning approach to latency-aware resource allocation in mobile edge networks.",
         "A reinforcement-learning system for adaptive, automated intrusion response in simulated network environments.",
-        "A configurable multi-agent simulation framework for studying how reinforcement learning scales in cooperative–competitive settings."
+        "A configurable multi-agent simulation framework for studying how reinforcement learning scales in cooperative\u2013competitive settings."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "Reinforcement learning",
-        "Simulation"
+        "Multi-agent simulation",
+        "reinforcement learning",
+        "scalability experiments",
+        "evaluation"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python",
+        "RL libraries (Stable-Baselines3, RLlib, PettingZoo/Gymnasium)",
+        "PyTorch"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P17",
       "title": "AI classification of physiological signals for mental-health screening",
       "area": "AI & Machine Learning",
       "specialism_tag": "AI / ML (health)",
-      "specialism_family": "Health & Wellbeing Computing",
       "project_type_1to5": 2,
       "generic_brief": "Use ML on physiological signals (EEG) or build an AI tool for early detection/support of mental-health conditions. Student refines signal and condition.",
       "worked_examples": [
@@ -401,22 +423,23 @@
         "An AI model classifying emotion from EEG signals for early detection of depression and anxiety."
       ],
       "methods_it_might_involve": [
-        "Feature engineering",
-        "Model evaluation",
-        "Signal processing",
-        "Supervised ML"
+        "Signal preprocessing",
+        "feature extraction",
+        "supervised classification",
+        "performance evaluation"
       ],
       "technologies_it_might_use": [
-        "Python",
-        "Sensor hardware"
-      ]
+        "Python, scikit-learn/PyTorch",
+        "EEG/physiological datasets",
+        "signal processing (MNE, SciPy)"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P18",
       "title": "Simulation & performance evaluation of a modern network architecture",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Network infrastructure",
-      "specialism_family": "Networks, IoT & Sensing",
       "project_type_1to5": 1,
       "generic_brief": "Using a discrete-event network simulator, model a modern network architecture (e.g. Open RAN, SDN, a 5G/6G RAN split) against a conventional baseline, then measure and compare performance under controlled traffic and channel conditions. The student selects the architecture, simulator scenarios and metrics during refinement.",
       "worked_examples": [
@@ -425,22 +448,20 @@
         "A 5G urban-microcell propagation study comparing scheduler behaviours under varying user density."
       ],
       "methods_it_might_involve": [
-        "Interaction design",
-        "Model evaluation",
-        "Simulation"
+        "Simulation modelling",
+        "comparative performance evaluation",
+        "scenario / load testing"
       ],
       "technologies_it_might_use": [
-        "C/C++",
-        "Network simulation",
-        "Python"
-      ]
+        "NS-3, C++/Python, Linux"
+      ],
+      "programmes": "NCS, CS"
     },
     {
       "id": "P19",
       "title": "ML intrusion / anomaly detection for networks and connected systems",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security / AI",
-      "specialism_family": "Security",
       "project_type_1to5": 3,
       "generic_brief": "Train and evaluate ML models to detect intrusions or anomalies in network/IoT traffic against a labelled dataset, comparing detection performance and false-positive behaviour. Student refines threat type, dataset and model family. The detection layer may combine a rule/signature approach with an ML layer (a hybrid comparison), and the same approach extends to spotting tampered or spoofed readings from connected devices.",
       "worked_examples": [
@@ -449,20 +470,23 @@
         "An explainable-AI anomaly-detection approach for IoT smart-device networks, comparing supervised and autoencoder-based methods."
       ],
       "methods_it_might_involve": [
-        "Feature engineering",
-        "Model evaluation",
-        "Supervised ML"
+        "Supervised & unsupervised anomaly detection",
+        "feature engineering",
+        "class-imbalance handling (e.g. SMOTE/GANs)",
+        "evaluation by ROC and false-positive analysis"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, scikit-learn, TensorFlow/PyTorch",
+        "labelled IDS datasets (NSL-KDD, UNSW-NB15, CICIDS)",
+        "pandas"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P20",
       "title": "ML detection of insider threats",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security / AI",
-      "specialism_family": "Security",
       "project_type_1to5": 3,
       "generic_brief": "Build and evaluate ML models that detect malicious insider activity from system logs or user-behaviour graphs, addressing class imbalance and explainability. Student refines data source and model.",
       "worked_examples": [
@@ -471,21 +495,23 @@
         "Machine-learning detection of insider threats from system-activity logs."
       ],
       "methods_it_might_involve": [
-        "Adversarial evaluation",
-        "Data analysis",
-        "Deep learning",
-        "Feature engineering"
+        "Graph- and log-based anomaly detection",
+        "behavioural feature extraction",
+        "(graph) neural networks",
+        "adversarial robustness testing"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, PyTorch Geometric/DGL, scikit-learn",
+        "CERT insider-threat dataset",
+        "NetworkX, pandas"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P21",
       "title": "Digital twin for cyber-attack simulation / detection",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security / AI",
-      "specialism_family": "Security",
       "project_type_1to5": 3,
       "generic_brief": "Build a digital-twin / virtual model of a network and use it to simulate attacks or detect novel anomalies (e.g. in 5G core). Student refines the modelled environment and method.",
       "worked_examples": [
@@ -494,47 +520,48 @@
         "A machine-learning intrusion-detection system embedded in a digital twin of network traffic."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "Security analysis",
-        "Simulation"
+        "Network/system modelling & simulation",
+        "intrusion-detection integration",
+        "novel-anomaly evaluation"
       ],
       "technologies_it_might_use": [
-        "Network simulation",
         "Python",
-        "Sensor hardware"
-      ]
+        "network simulation (NS-3, Mininet, containerlab)",
+        "ML libraries",
+        "5G core / SDN tooling"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P22",
       "title": "Security and analysis of large language models",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security / AI",
-      "specialism_family": "Security",
       "project_type_1to5": 3,
-      "generic_brief": "Investigate LLM security — fingerprinting, prompt-injection defence, attack-surface or output-reconstruction analysis — with implementation and evaluation. Student refines the specific question.",
+      "generic_brief": "Investigate LLM security \u2014 fingerprinting, prompt-injection defence, attack-surface or output-reconstruction analysis \u2014 with implementation and evaluation. Student refines the specific question.",
       "worked_examples": [
         "A web-application firewall using local-LLM inspection to detect obfuscated malicious HTTP requests that evade signature-based rules.",
         "A defensive approach combining multiple LLMs to detect and prevent prompt-injection attacks on LLM-powered systems.",
         "Fingerprinting large language models through analysis of their network traffic."
       ],
       "methods_it_might_involve": [
-        "Adversarial evaluation",
-        "Model evaluation",
-        "NLP",
-        "Security analysis"
+        "Threat & attack-surface analysis",
+        "LLM fingerprinting or prompt-injection testing",
+        "defensive evaluation"
       ],
       "technologies_it_might_use": [
-        "LLM APIs",
-        "Network simulation",
-        "Python"
-      ]
+        "Python",
+        "LLM APIs and local LLMs (Llama, Ollama)",
+        "traffic-analysis tooling",
+        "PyTorch"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P23",
       "title": "Blockchain trust / resilience investigation",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security",
-      "specialism_family": "Security",
       "project_type_1to5": 2,
       "generic_brief": "Investigate blockchain's resilience or trust properties (e.g. MITM resistance, provenance/anti-counterfeiting) against an alternative, with implementation and evaluation. Student refines the use case.",
       "worked_examples": [
@@ -542,22 +569,24 @@
         "An investigation into using blockchain to authenticate trainers and prevent counterfeit e-commerce sales."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "Prototyping",
-        "Security analysis"
+        "Comparative security analysis",
+        "threat modelling",
+        "prototype implementation",
+        "evaluation"
       ],
       "technologies_it_might_use": [
-        "Blockchain/Ethereum",
-        "JavaScript",
-        "Python"
-      ]
+        "Solidity/smart contracts",
+        "Ethereum/Hyperledger",
+        "cryptography libraries",
+        "Python/JavaScript"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P24",
       "title": "Security auditing / vulnerability-analysis tooling",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security",
-      "specialism_family": "Security",
       "project_type_1to5": 4,
       "generic_brief": "Design and evaluate a tool that audits or statically analyses an application/platform for security weaknesses (e.g. secrets, misconfig, version diffing) and reports actionable findings. Student refines the target.",
       "worked_examples": [
@@ -565,21 +594,24 @@
         "A security auditing, remediation and validation framework for a popular low-code website-building platform."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "Security analysis",
-        "System design"
+        "Static analysis",
+        "vulnerability/secret detection",
+        "version diffing",
+        "validation against test cases"
       ],
       "technologies_it_might_use": [
         "Python",
-        "Static analysis tools"
-      ]
+        "static-analysis tooling",
+        "APK/reverse-engineering tools (jadx, apktool)",
+        "CLI frameworks"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P25",
       "title": "Interactive digital-forensics / cybercrime investigation simulator",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security / forensics",
-      "specialism_family": "Security",
       "project_type_1to5": 4,
       "generic_brief": "Design an interactive simulation or tool teaching or supporting digital-forensic / cybercrime investigation, evaluated for educational or investigative value. Student refines scenario.",
       "worked_examples": [
@@ -587,23 +619,23 @@
         "A vision-language-model tool to help police digital-forensics units triage the backlog of seized-device data."
       ],
       "methods_it_might_involve": [
-        "Interaction design",
-        "Model evaluation",
-        "Simulation"
+        "Scenario/interaction design",
+        "simulation development",
+        "educational or investigative evaluation"
       ],
       "technologies_it_might_use": [
+        "Unity/Twine",
         "C#",
-        "LLM APIs",
-        "Survey tools",
-        "Unity"
-      ]
+        "vision-language models where relevant",
+        "user-study tooling"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P26",
       "title": "Ultra-wideband indoor tracking / access system",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Sensing",
-      "specialism_family": "Networks, IoT & Sensing",
       "project_type_1to5": 3,
       "generic_brief": "Develop and evaluate a UWB indoor tracking, asset-location or proximity-access system, measuring performance. Student refines the build.",
       "worked_examples": [
@@ -611,46 +643,47 @@
         "A software tool that visualises Ultra-Wideband indoor asset-tracking data on a live 3D map."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "Signal processing",
-        "System design"
+        "Sensor data acquisition",
+        "positioning algorithms",
+        "system integration",
+        "performance measurement"
       ],
       "technologies_it_might_use": [
-        "Blender",
-        "Python",
-        "Sensor hardware",
-        "Unity"
-      ]
+        "UWB hardware (Decawave/Qorvo)",
+        "Python/C",
+        "3D visualisation (Three.js/Unity)",
+        "embedded tooling"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P27",
       "title": "Human-factors study of security / compliance behaviour",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security (human factors)",
-      "specialism_family": "Security",
       "project_type_1to5": 1,
       "generic_brief": "Investigate human or contextual factors affecting security or compliance behaviour (e.g. age-verification compliance), with study and analysis informing design. Student refines the behaviour.",
       "worked_examples": [
         "An investigation of the implementation and contextual factors affecting user compliance with online age-verification measures."
       ],
       "methods_it_might_involve": [
-        "Interaction design",
-        "Qualitative analysis",
-        "Statistical analysis",
-        "User research"
+        "Qualitative and quantitative study",
+        "surveys/interviews",
+        "thematic and statistical analysis",
+        "design recommendations"
       ],
       "technologies_it_might_use": [
-        "Python",
-        "R",
-        "Survey tools"
-      ]
+        "Survey/interview tooling",
+        "statistics (R, Python, SPSS)",
+        "NVivo for qualitative coding"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P28",
       "title": "Machine-learning detection of phishing / spam under adversarial conditions",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security / AI",
-      "specialism_family": "Security",
       "project_type_1to5": 2,
       "generic_brief": "Build and evaluate ML detection of phishing or spam (emails/websites), including robustness to adversarial or AI-generated content. Student refines target and embeddings/models.",
       "worked_examples": [
@@ -659,22 +692,22 @@
         "An adaptive transfer-learning model for robustly detecting phishing websites despite evasion tactics and unseen patterns."
       ],
       "methods_it_might_involve": [
-        "Adversarial evaluation",
-        "Feature engineering",
-        "Model evaluation",
-        "NLP",
-        "Supervised ML"
+        "NLP feature extraction",
+        "ML/DL classification",
+        "adversarial attack and defence evaluation"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, scikit-learn, transformers",
+        "phishing/spam datasets",
+        "NLP libraries"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P29",
       "title": "Effectiveness of cybersecurity awareness training (human factors)",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security (human factors)",
-      "specialism_family": "Security",
       "project_type_1to5": 1,
       "generic_brief": "Study how cybersecurity awareness or knowledge transfer works in organisations or social networks, measuring effectiveness/fidelity. Student refines population and intervention.",
       "worked_examples": [
@@ -683,24 +716,22 @@
         "A study of how accurately cybersecurity advice is transmitted through informal social networks, and how to improve its fidelity."
       ],
       "methods_it_might_involve": [
-        "Data analysis",
-        "Experiment design",
-        "Game design"
+        "Intervention design",
+        "controlled comparison (e.g. video vs gamified)",
+        "knowledge/behaviour measurement"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
-        "Python",
-        "R",
-        "Survey tools",
-        "Web stack"
-      ]
+        "Web/mobile or game tooling",
+        "survey/quiz platforms",
+        "statistics (R, Python)"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P30",
       "title": "IoT sensor network / protocol prototype and evaluation",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Network infrastructure / IoT",
-      "specialism_family": "Networks, IoT & Sensing",
       "project_type_1to5": 3,
       "generic_brief": "Build and evaluate an IoT sensor-network prototype (ESP32/multi-hop/protocol comparison) for a monitoring application, measuring transmission performance. Student refines sensors and protocols.",
       "worked_examples": [
@@ -709,22 +740,23 @@
         "The design and evaluation of a multi-hop wireless sensor network built with ESP32 microcontrollers, comparing routing protocols."
       ],
       "methods_it_might_involve": [
-        "Prototyping",
-        "Security analysis"
+        "Protocol comparison",
+        "prototype build",
+        "performance and security measurement under test conditions"
       ],
       "technologies_it_might_use": [
-        "C/C++",
-        "Network simulation",
-        "Python",
-        "Sensor hardware"
-      ]
+        "ESP32/microcontrollers",
+        "MQTT/CoAP/HTTP",
+        "C/Python",
+        "network-measurement tooling"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P31",
       "title": "Cloud-native / IoT platform for remote environmental monitoring",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Cloud / IoT",
-      "specialism_family": "Networks, IoT & Sensing",
       "project_type_1to5": 3,
       "generic_brief": "Build a cloud-native or IoT platform for remote monitoring (precision agriculture, isolated areas), evaluated for reliability. Student refines the domain.",
       "worked_examples": [
@@ -733,22 +765,25 @@
         "A cloud-native crop-monitoring platform using satellite data to support precision-agriculture decisions in low-connectivity areas."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "Signal processing",
-        "System design",
-        "Visualisation"
+        "Remote-sensing/IoT data processing",
+        "cloud-native architecture",
+        "dashboard development",
+        "evaluation"
       ],
       "technologies_it_might_use": [
-        "Cloud platforms",
-        "Python"
-      ]
+        "Cloud platforms (AWS/Azure)",
+        "Python",
+        "Sentinel/Copernicus data",
+        "containers",
+        "dashboards"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P32",
       "title": "Forensic text mining of digital evidence corpora",
       "area": "Cyber Security & Networks",
       "specialism_tag": "Security / NLP",
-      "specialism_family": "Security",
       "project_type_1to5": 2,
       "generic_brief": "Apply text mining / NLP to a corpus of digital evidence (emails, logs) for forensic intelligence and pattern/anomaly discovery. Student refines corpus and method.",
       "worked_examples": [
@@ -756,21 +791,24 @@
         "Text mining and pattern recognition over digital communications such as the Enron corpus to surface forensic evidence and hidden relationships."
       ],
       "methods_it_might_involve": [
-        "Data analysis",
-        "Model evaluation",
-        "NLP",
-        "Security analysis"
+        "Text mining/NLP",
+        "anomaly and pattern detection",
+        "relationship extraction",
+        "forensic evaluation"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python, spaCy/NLTK, scikit-learn",
+        "Enron corpus",
+        "network analysis",
+        "pandas"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P33",
       "title": "Research-oriented software tool benchmarked against an incumbent",
       "area": "Data Science, Analytics & Business Systems",
       "specialism_tag": "Software / web / mobile development",
-      "specialism_family": "Business & Software Systems",
       "project_type_1to5": 4,
       "generic_brief": "Design and build a working software tool that addresses a specific gap in existing tooling, benchmark it quantitatively against the established alternative, and run a usability evaluation with target users. Student selects the tool domain and the benchmark dimensions in refinement.",
       "worked_examples": [
@@ -779,21 +817,21 @@
         "A domain-specific code editor extension evaluated against the default workflow."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "System design",
-        "Usability evaluation"
+        "Software design & build",
+        "automated benchmarking",
+        "usability / user-acceptance study",
+        "comparative analysis"
       ],
       "technologies_it_might_use": [
-        "C#",
-        "Python"
-      ]
+        "C#/.NET, Blazor (or equivalent stack), Git, Python (benchmark scripts)"
+      ],
+      "programmes": "CS"
     },
     {
       "id": "P34",
       "title": "Staff scheduling / rostering application for an organisation",
       "area": "Data Science, Analytics & Business Systems",
       "specialism_tag": "Business computing",
-      "specialism_family": "Business & Software Systems",
       "project_type_1to5": 4,
       "generic_brief": "Analyse a shift-scheduling workflow and build an application (optionally with optimisation) that improves rota creation, evaluated against the manual baseline. Student refines the sector.",
       "worked_examples": [
@@ -802,24 +840,24 @@
         "A scheduling application supporting middle management to reduce workload and staffing errors."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "System design",
-        "Usability evaluation",
-        "User research"
+        "Workflow/requirements analysis",
+        "heuristic or constraint-based scheduling/optimisation",
+        "baseline comparison",
+        "usability testing"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
-        "Python",
-        "SQL",
-        "Web stack"
-      ]
+        "Web stack (JavaScript/React, Node)",
+        "SQL database",
+        "optimisation/constraint libraries",
+        "calendar APIs"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P35",
       "title": "E-commerce / stock-management application",
       "area": "Data Science, Analytics & Business Systems",
       "specialism_tag": "Business computing",
-      "specialism_family": "Business & Software Systems",
       "project_type_1to5": 4,
       "generic_brief": "Design and build an e-commerce, marketplace or stock-management application for an organisation or user group, evaluated for usability/efficiency. Student refines the domain.",
       "worked_examples": [
@@ -828,44 +866,45 @@
         "A user-centred stock-management system for micro and small enterprises in Southeast Asia."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "System design",
-        "Usability evaluation",
-        "User research"
+        "Requirements analysis",
+        "full-stack application development",
+        "user-centred evaluation"
       ],
       "technologies_it_might_use": [
-        "Cloud platforms",
-        "JavaScript",
-        "SQL",
-        "Web stack"
-      ]
+        "Web stack (React/Node/PHP)",
+        "SQL/NoSQL database",
+        "payment/auth APIs",
+        "cloud hosting"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P36",
       "title": "Conceptual modelling / novel information-system design",
       "area": "Data Science, Analytics & Business Systems",
       "specialism_tag": "Software / niche",
-      "specialism_family": "Business & Software Systems",
       "project_type_1to5": 1,
       "generic_brief": "Design a conceptual modelling language or novel information system for an unconventional domain. Student refines the domain.",
       "worked_examples": [
         "The design of a conceptual modelling language extending UML/SysML to represent animals as stakeholders in interspecies information systems."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "System design",
-        "User research"
+        "Domain analysis",
+        "conceptual/metamodel design",
+        "modelling-language evaluation via case studies"
       ],
       "technologies_it_might_use": [
-        "Static analysis tools"
-      ]
+        "UML/SysML/BPMN tooling",
+        "modelling frameworks (EMF)",
+        "diagramming tools"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P37",
       "title": "Secondary-data analysis of adoption / satisfaction in a population",
       "area": "Data Science, Analytics & Business Systems",
       "specialism_tag": "Data science (health)",
-      "specialism_family": "Health & Wellbeing Computing",
       "project_type_1to5": 1,
       "generic_brief": "Use existing public datasets (plus light qualitative sources) to analyse barriers, motivators or satisfaction in a population (e.g. hearing-aid adoption). Student refines the domain. [SCREENING: analysis must inform/feed a prototype to meet the UG bar.]",
       "worked_examples": [
@@ -874,24 +913,23 @@
         "A quantitative analysis of barriers and motivators to hearing-aid adoption among older adults using public secondary data."
       ],
       "methods_it_might_involve": [
-        "Prototyping",
-        "Qualitative analysis",
-        "Statistical analysis",
-        "User research"
+        "Secondary-data analysis",
+        "quantitative plus light qualitative methods",
+        "prototype design informed by findings"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
-        "Python",
-        "R",
-        "Web stack"
-      ]
+        "Python/R (pandas, statsmodels)",
+        "public datasets (ELSA, Kaggle)",
+        "web/mobile prototyping",
+        "visualisation libraries"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P38",
       "title": "Comparative time-series forecasting with statistical, ML and deep-learning models",
       "area": "Data Science, Analytics & Business Systems",
       "specialism_tag": "Data science / AI",
-      "specialism_family": "AI & Machine Learning",
       "project_type_1to5": 2,
       "generic_brief": "Compare statistical, ML and deep-learning (incl. foundation) models for forecasting a real time series (finance, hydrology, energy, deforestation, network), with uncertainty/accuracy evaluation. Student refines domain and models.",
       "worked_examples": [
@@ -900,20 +938,23 @@
         "Time-series anomaly detection and forecasting of tropical deforestation in Borneo from Sentinel-2 satellite imagery."
       ],
       "methods_it_might_involve": [
-        "Data analysis",
-        "Model evaluation",
-        "Statistical analysis"
+        "Time-series modelling",
+        "statistical, ML and DL forecasting",
+        "backtesting",
+        "error-metric comparison"
       ],
       "technologies_it_might_use": [
-        "Python"
-      ]
+        "Python (statsmodels, Prophet, scikit-learn, PyTorch)",
+        "ARIMA/LSTM/PatchTST/TimesFM",
+        "pandas"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P39",
       "title": "Spatial and statistical analysis of public crime / socio-economic data",
       "area": "Data Science, Analytics & Business Systems",
       "specialism_tag": "Data science",
-      "specialism_family": "Data Science & Analytics",
       "project_type_1to5": 1,
       "generic_brief": "Analyse and visualise patterns in public crime or socio-economic datasets (theft, shoplifting, house prices, business survival), addressing bias/fairness where relevant. Student refines dataset and question.",
       "worked_examples": [
@@ -922,21 +963,24 @@
         "An analysis of the determinants of five-year UK business survival using ONS Business Demography open data."
       ],
       "methods_it_might_involve": [
-        "Data analysis",
-        "Statistical analysis",
-        "Visualisation"
+        "Data engineering",
+        "spatial and statistical analysis",
+        "visualisation",
+        "pattern identification"
       ],
       "technologies_it_might_use": [
-        "Python",
-        "SQL"
-      ]
+        "Python (pandas, GeoPandas), SQL",
+        "data.police.uk / ONS open data",
+        "mapping (Folium, QGIS)",
+        "dashboards"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P40",
       "title": "Business-intelligence analytics dashboard for decision support",
       "area": "Data Science, Analytics & Business Systems",
       "specialism_tag": "Business intelligence",
-      "specialism_family": "Data Science & Analytics",
       "project_type_1to5": 5,
       "generic_brief": "Design and build a BI/analytics dashboard summarising and forecasting from a real organisational dataset to support decisions. Student refines the domain and metrics.",
       "worked_examples": [
@@ -945,21 +989,24 @@
         "A business-intelligence dashboard turning banking transactional data into sales-performance insights using low-code BI tools."
       ],
       "methods_it_might_involve": [
-        "Data analysis",
-        "Model evaluation",
-        "Visualisation"
+        "Data integration & modelling",
+        "analytics",
+        "interactive visualisation",
+        "decision-support evaluation"
       ],
       "technologies_it_might_use": [
+        "Power BI / Plotly Dash / Tableau",
+        "SQL",
         "Python",
-        "SQL"
-      ]
+        "ETL tooling"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P41",
       "title": "Robotic Process Automation of a repetitive business workflow",
       "area": "Data Science, Analytics & Business Systems",
       "specialism_tag": "Other / automation",
-      "specialism_family": "Business & Software Systems",
       "project_type_1to5": 5,
       "generic_brief": "Build and test an RPA prototype automating an end-to-end rule-based business workflow (rentals, screening), against the manual baseline. Student refines the workflow.",
       "worked_examples": [
@@ -967,47 +1014,47 @@
         "A robotic-process-automation prototype automating the repetitive administrative workflow of car rental."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "System design",
-        "User research"
+        "Process analysis",
+        "workflow automation",
+        "bot development",
+        "efficiency/error evaluation vs baseline"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
+        "RPA platforms (UiPath, Power Automate)",
         "Python",
-        "RPA platforms",
-        "Web stack"
-      ]
+        "API/web automation",
+        "spreadsheets"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P42",
       "title": "Mixed-methods study comparing a local survey against national open data",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "Data science / open-data analysis",
-      "specialism_family": "Data Science & Analytics",
       "project_type_1to5": 1,
-      "generic_brief": "Design a primary survey aligned to questions in a national open dataset, collect and analyse local responses quantitatively and qualitatively, and compare local findings against national trends on a chosen behaviour or attitude question. NOTE: original recruited via a hospital (ethics/access lock); portable variant uses ordinary public recruitment. [SCREENING: primary collection required — pure secondary analysis does not meet the UG bar.]",
+      "generic_brief": "Design a primary survey aligned to questions in a national open dataset, collect and analyse local responses quantitatively and qualitatively, and compare local findings against national trends on a chosen behaviour or attitude question. NOTE: original recruited via a hospital (ethics/access lock); portable variant uses ordinary public recruitment. [SCREENING: primary collection required \u2014 pure secondary analysis does not meet the UG bar.]",
       "worked_examples": [
         "A study of barriers and motivators for hearing-aid use in adults 50+, comparing a local survey against national datasets (ELSA / EuroTrak).",
         "A study of public attitudes to data privacy comparing a local survey against a national open survey series.",
         "A comparison of local commuting behaviour against national transport open data."
       ],
       "methods_it_might_involve": [
-        "Data analysis",
-        "Qualitative analysis",
-        "Statistical analysis",
-        "User research"
+        "Survey design",
+        "descriptive statistics",
+        "thematic analysis",
+        "secondary-data comparison"
       ],
       "technologies_it_might_use": [
-        "Python",
-        "Survey tools"
-      ]
+        "Microsoft Forms, Excel, Python (optional)"
+      ],
+      "programmes": "Data Science, Business Computing, CS"
     },
     {
       "id": "P43",
       "title": "Student finance / spend-tracking tool",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "Web / HCI",
-      "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 4,
       "generic_brief": "Design, prototype and user-evaluate a budgeting or spend-tracking tool addressing students' money-management needs, using a UX/HCI method. Student refines features and platform.",
       "worked_examples": [
@@ -1016,53 +1063,48 @@
         "A simplified, low-complexity spend-tracking app designed and evaluated with students."
       ],
       "methods_it_might_involve": [
-        "Interaction design",
-        "Model evaluation",
-        "Prototyping",
-        "Usability evaluation",
-        "User research"
+        "User research (interviews/surveys)",
+        "UX prototyping",
+        "iterative design",
+        "usability evaluation"
       ],
       "technologies_it_might_use": [
+        "Mobile/web frameworks (React, Flutter)",
         "Figma",
-        "JavaScript",
-        "Mobile frameworks",
-        "SQL",
-        "Web stack"
-      ]
+        "SQLite/Firebase"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P44",
-      "title": "Student–lecturer communication tool",
+      "title": "Student\u2013lecturer communication tool",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "Web / HCI",
-      "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 4,
-      "generic_brief": "Design and evaluate an alternative to email for structured student–lecturer communication, addressing etiquette anxiety and inconsistent responses. Student refines the channel and evaluation.",
+      "generic_brief": "Design and evaluate an alternative to email for structured student\u2013lecturer communication, addressing etiquette anxiety and inconsistent responses. Student refines the channel and evaluation.",
       "worked_examples": [
-        "A study and prototype exploring alternatives to email for student–lecturer communication, addressing student anxiety about contacting tutors.",
-        "A UX prototype redesigning student–lecturer communication to reduce the ambiguity and anxiety of email etiquette.",
-        "A designed-and-evaluated structured alternative to email for student–lecturer communication."
+        "A study and prototype exploring alternatives to email for student\u2013lecturer communication, addressing student anxiety about contacting tutors.",
+        "A UX prototype redesigning student\u2013lecturer communication to reduce the ambiguity and anxiety of email etiquette.",
+        "A designed-and-evaluated structured alternative to email for student\u2013lecturer communication."
       ],
       "methods_it_might_involve": [
-        "Interaction design",
-        "Model evaluation",
-        "Prototyping",
-        "Usability evaluation",
-        "User research"
+        "User-centred design",
+        "interviews/surveys",
+        "prototyping",
+        "usability/UX evaluation"
       ],
       "technologies_it_might_use": [
+        "Web/mobile stack (React, JavaScript)",
         "Figma",
-        "JavaScript",
-        "SQL",
-        "Web stack"
-      ]
+        "lightweight backend (Node, Firebase)"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P45",
       "title": "Digital wellbeing / self-regulation intervention",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "HCI / wellbeing",
-      "specialism_family": "Health & Wellbeing Computing",
       "project_type_1to5": 4,
       "generic_brief": "Design and evaluate a digital intervention supporting wellbeing, anxiety or self-regulation for a defined group, informed by research. Student refines the population and intervention.",
       "worked_examples": [
@@ -1071,25 +1113,24 @@
         "A mobile application supporting menopausal women and their employers in the workplace through education and coping tools."
       ],
       "methods_it_might_involve": [
-        "Experiment design",
-        "Interaction design",
-        "Model evaluation",
-        "Statistical analysis",
-        "Usability evaluation"
+        "Research-informed intervention design",
+        "participatory/UCD",
+        "self-report measures",
+        "usability evaluation"
       ],
       "technologies_it_might_use": [
+        "Mobile/web frameworks",
         "Figma",
-        "JavaScript",
-        "Survey tools",
-        "Web stack"
-      ]
+        "notification/scheduling APIs",
+        "survey tools"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P46",
       "title": "Student learning-support / accessibility tool",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "Web / HCI",
-      "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 4,
       "generic_brief": "Design and evaluate a tool supporting learning, study management or accessibility for students (incl. neurodivergent or disabled users). Student refines the need and platform.",
       "worked_examples": [
@@ -1098,24 +1139,24 @@
         "An accessibility app helping people with epilepsy engage safely with heritage sites."
       ],
       "methods_it_might_involve": [
-        "Interaction design",
-        "Model evaluation",
-        "Prototyping",
-        "User research"
+        "Inclusive/accessible design",
+        "user research with target group",
+        "prototyping",
+        "accessibility evaluation (WCAG)"
       ],
       "technologies_it_might_use": [
+        "Web/mobile frameworks",
         "Figma",
-        "JavaScript",
-        "Mobile frameworks",
-        "Web stack"
-      ]
+        "accessibility tooling",
+        "JavaScript"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P47",
       "title": "Clinical / health management or monitoring application",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "AI / ML (health)",
-      "specialism_family": "Health & Wellbeing Computing",
       "project_type_1to5": 4,
       "generic_brief": "Design and build a management or monitoring application supporting a clinical workflow, condition or health-student placement, evaluated with users or data. Student refines the setting.",
       "worked_examples": [
@@ -1124,26 +1165,24 @@
         "A clinical management system preparing health and life-science students for clinical placements."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "Signal processing",
-        "System design",
-        "Usability evaluation",
-        "User research"
+        "Requirements gathering",
+        "application development",
+        "remote-monitoring data handling",
+        "usability evaluation"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
-        "Python",
-        "SQL",
-        "Sensor hardware",
-        "Web stack"
-      ]
+        "Web/mobile stack",
+        "database",
+        "charting libraries",
+        "wearable/sensor APIs"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P48",
       "title": "Human perception of misinformation (eye-tracking / interface study)",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "AI / HCI",
-      "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 1,
       "generic_brief": "Study how people perceive misinformation using eye-tracking or interface experiments, identifying attention patterns or design factors. Student refines the stimulus and measure.",
       "worked_examples": [
@@ -1152,47 +1191,46 @@
         "An eye-tracking study optimising web-interface design to reduce susceptibility to political misinformation."
       ],
       "methods_it_might_involve": [
-        "Experiment design",
-        "Signal processing",
-        "Statistical analysis"
+        "Eye-tracking experiment design",
+        "controlled study",
+        "statistical analysis of attention and behaviour"
       ],
       "technologies_it_might_use": [
-        "Python",
-        "R",
-        "Sensor hardware",
-        "Survey tools"
-      ]
+        "Eye-tracking hardware/software (Tobii, GazePoint)",
+        "experiment tooling (PsychoPy)",
+        "statistics (R, Python, SPSS)"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P49",
       "title": "Study-skill micro-practice tool",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "Web / HCI",
-      "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 4,
       "generic_brief": "Design and evaluate a micro-practice / pattern-recognition tool helping students learn a study skill (e.g. referencing). Student refines the skill.",
       "worked_examples": [
         "A micro-practice tool using pattern recognition to help students learn Harvard referencing rather than relying on generators."
       ],
       "methods_it_might_involve": [
-        "Experiment design",
-        "Interaction design",
-        "Model evaluation",
-        "Prototyping",
-        "Usability evaluation"
+        "Learning-science-informed design",
+        "spaced/micro-practice",
+        "prototyping",
+        "usability evaluation"
       ],
       "technologies_it_might_use": [
+        "Web/mobile frameworks",
         "JavaScript",
-        "Mobile frameworks",
-        "Web stack"
-      ]
+        "lightweight backend",
+        "usage analytics"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P50",
       "title": "Web application for personal tracking and productivity",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "Web development",
-      "specialism_family": "Business & Software Systems",
       "project_type_1to5": 5,
       "generic_brief": "Design and build a web application for tracking a personal domain (sleep, time, reading, productivity) with data capture and analysis, evaluated with users or against an alternative build. Student refines domain.",
       "worked_examples": [
@@ -1201,24 +1239,23 @@
         "A web application that automatically tracks time on work activities by capturing data from calendar tools."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "System design",
-        "Usability evaluation",
-        "User research"
+        "Requirements analysis",
+        "full-stack development",
+        "usability evaluation"
       ],
       "technologies_it_might_use": [
-        "Cloud platforms",
-        "JavaScript",
-        "SQL",
-        "Web stack"
-      ]
+        "Web stack (React/Node)",
+        "database",
+        "calendar/auth APIs",
+        "cloud hosting"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P51",
       "title": "Behavioural / HCI study of social-media use and recommender effects",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "HCI / data",
-      "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 1,
       "generic_brief": "Investigate how users experience a social-media platform or recommender mechanism (TikTok, algorithmic bubbles), using behavioural, ethnographic or simulation methods. Student refines platform and method.",
       "worked_examples": [
@@ -1227,22 +1264,23 @@
         "A study and tool addressing the spread of misinformation on TikTok when the platform is used for informal education."
       ],
       "methods_it_might_involve": [
-        "Experiment design",
-        "Qualitative analysis",
-        "User research"
+        "Behavioural/HCI study design",
+        "surveys/interviews/experiments",
+        "clustering or thematic analysis"
       ],
       "technologies_it_might_use": [
-        "Python",
-        "R",
-        "Survey tools"
-      ]
+        "Survey/experiment tooling",
+        "Python/R for analysis",
+        "statistics",
+        "qualitative coding"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P52",
       "title": "Interactive companion / utility application for a user activity",
       "area": "Human-Centred & Interactive Computing",
       "specialism_tag": "Web / mobile",
-      "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 4,
       "generic_brief": "Design and evaluate an interactive companion or utility app supporting a user activity (travel, music practice) with real-time feedback. Student refines the activity.",
       "worked_examples": [
@@ -1251,24 +1289,22 @@
         "An interactive drumming-tutor app using microphone input and onset detection to give real-time feedback on timing and accuracy."
       ],
       "methods_it_might_involve": [
-        "Model evaluation",
-        "System design",
-        "Usability evaluation",
-        "User research"
+        "Requirements/user research",
+        "application development",
+        "usability evaluation"
       ],
       "technologies_it_might_use": [
-        "Figma",
-        "JavaScript",
-        "Sensor hardware",
-        "Web stack"
-      ]
+        "Mobile/web frameworks",
+        "device/sensor or media APIs",
+        "Figma"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P53",
       "title": "Gesture / technology control of stage lighting",
       "area": "Games & Immersive",
       "specialism_tag": "HCI / interactive",
-      "specialism_family": "Human-Centred & Interactive",
       "project_type_1to5": 4,
       "generic_brief": "Build and evaluate a system controlling stage lighting via modern interaction (body gestures, poses, devices). Student refines the interaction method.",
       "worked_examples": [
@@ -1277,24 +1313,23 @@
       ],
       "methods_it_might_involve": [
         "Interaction design",
-        "Model evaluation",
-        "Prototyping",
-        "Robotics",
-        "Usability evaluation"
+        "gesture/pose recognition",
+        "prototype build",
+        "user evaluation"
       ],
       "technologies_it_might_use": [
-        "JavaScript",
-        "OpenCV",
-        "Python",
-        "Sensor hardware"
-      ]
+        "Python/JavaScript",
+        "pose estimation (MediaPipe, OpenCV)",
+        "DMX/Art-Net lighting control",
+        "microcontrollers"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P54",
       "title": "Games design study or playable prototype investigating a player-experience question",
       "area": "Games & Immersive",
       "specialism_tag": "Games",
-      "specialism_family": "Games & Immersive",
       "project_type_1to5": 4,
       "generic_brief": "Build or study a game (or game feature) to investigate a player-experience question such as difficulty, immersion, engagement or skill, with playtesting/evaluation. Student refines the question and engine.",
       "worked_examples": [
@@ -1303,24 +1338,23 @@
         "A game prototype exploring how boss-encounter difficulty can be raised through enemy mechanics and behaviour rather than stat scaling."
       ],
       "methods_it_might_involve": [
-        "Experiment design",
         "Game design",
-        "Prototyping"
+        "prototype development",
+        "playtesting",
+        "player-experience measurement (surveys, telemetry)"
       ],
       "technologies_it_might_use": [
-        "C#",
-        "C/C++",
-        "Survey tools",
-        "Unity",
-        "Unreal Engine"
-      ]
+        "Unity/Unreal, C#/C++/Blueprints",
+        "game telemetry",
+        "survey tools"
+      ],
+      "programmes": "(roster-join)"
     },
     {
       "id": "P55",
       "title": "VR simulation for training or heritage recreation",
       "area": "Games & Immersive",
       "specialism_tag": "Games / VR",
-      "specialism_family": "Games & Immersive",
       "project_type_1to5": 4,
       "generic_brief": "Design and user-evaluate a VR simulation for training (driving, safety) or heritage recreation, as a proof-of-concept. Student refines scenario and hardware.",
       "worked_examples": [
@@ -1329,19 +1363,19 @@
         "A user-centred VR simulation prototype (Unreal Engine 5) for training apprentice dental nurses, evaluated for usability and satisfaction."
       ],
       "methods_it_might_involve": [
-        "Interaction design",
-        "Model evaluation",
-        "Prototyping",
-        "Usability evaluation",
-        "VR / immersive design"
+        "Immersive experience design",
+        "3D modelling",
+        "VR development",
+        "usability/effectiveness evaluation"
       ],
       "technologies_it_might_use": [
+        "Unreal Engine/Unity",
+        "C#/Blueprints",
+        "VR headsets (Quest)",
         "Blender",
-        "C#",
-        "Unity",
-        "Unreal Engine",
-        "VR hardware"
-      ]
+        "3D assets"
+      ],
+      "programmes": "(roster-join)"
     }
   ]
 }

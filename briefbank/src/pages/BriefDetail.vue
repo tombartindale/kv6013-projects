@@ -1,21 +1,30 @@
 <template lang="pug">
 q-page.q-pa-md(v-if="brief")
-  .row.q-mb-md
-    .col
-      q-btn(flat, dense, icon="arrow_back", @click="$router.back()", no-caps) Back
-
   .row.justify-center
     .col-12.col-md-8
+      div(v-if="isInShortlist")
+        q-banner.bg-positive.text-white.q-mb-md(rounded)
+          template(v-slot:avatar)
+            q-icon(name="check_circle")
+          | In your shortlist — rank {{ rank }}
+          template(v-slot:action)
+            q-btn(flat, color="white", label="Remove", @click="removeFromShortlist(brief.id)", aria-label="Remove from shortlist")
+
+      div(v-else-if="shortlistFull")
+        q-banner.bg-warning.text-dark.q-mb-md(rounded)
+          template(v-slot:avatar)
+            q-icon(name="warning")
+          | Shortlist full (max 3). Remove a brief from your
+          q-btn.q-ml-xs(flat, dense, no-caps, size="sm", :to="'/shortlist'") shortlist
+          |  to add this one.
+
       .text-overline.text-grey-7 {{ brief.area }}
-      .text-h5.text-bold.q-mb-sm {{ brief.title }}
-
-      .row.items-center.q-col-gutter-sm.q-mb-md
+      .row.items-center.q-col-gutter-md.no-wrap.q-mb-xs
         .col-auto
-          q-chip(dense, color="black", text-color="white") {{ brief.id }}
-        .col-auto(v-if="brief.specialism_tag")
-          q-chip(dense, outline) {{ brief.specialism_tag }}
-
-      project-type-meter(:value="brief.project_type_1to5")
+          .id-circle {{ brief.id.replace(/^P/, '') }}
+        .col
+          .text-h5.text-bold.text-uppercase {{ brief.title }}
+      q-chip.q-mb-md(dense, outline, v-if="brief.specialism_tag") {{ brief.specialism_tag }}
 
       q-separator.q-my-lg
 
@@ -29,7 +38,7 @@ q-page.q-pa-md(v-if="brief")
 
       q-separator.q-my-lg
 
-      .text-overline.text-grey-7.q-mb-sm Worked examples
+      .text-overline.text-grey-7.q-mb-sm Real past projects
       .q-mb-sm(v-for="(ex, i) of brief.worked_examples" :key="i")
         .row.no-wrap
           q-icon.q-mt-xs(name="chevron_right", size="xs", color="grey-6")
@@ -38,29 +47,27 @@ q-page.q-pa-md(v-if="brief")
       q-separator.q-my-lg
 
       .row.q-col-gutter-lg
-        .col-12.col-sm-6(v-if="brief.methods_it_might_involve")
+        .col-12.col-sm-6(v-if="brief.methods_it_might_involve?.length")
           .text-overline.text-grey-7.q-mb-sm Methods it might involve
-          .text-body2 {{ brief.methods_it_might_involve }}
-        .col-12.col-sm-6(v-if="brief.technologies_it_might_use")
+          .row.q-gutter-sm
+            q-chip(
+              v-for="tag of brief.methods_it_might_involve"
+              :key="tag"
+            ) {{ tag }}
+        .col-12.col-sm-6(v-if="brief.technologies_it_might_use?.length")
           .text-overline.text-grey-7.q-mb-sm Technologies it might use
-          .text-body2 {{ brief.technologies_it_might_use }}
+          .row.q-gutter-sm
+            q-chip(
+              v-for="tag of brief.technologies_it_might_use"
+              :key="tag"
+              color="blue-grey-1"
+            ) {{ tag }}
+
+      project-type-meter.q-mt-lg(:value="brief.project_type_1to5")
 
       q-separator.q-my-lg
 
-      .text-overline.text-grey-7.q-mb-sm Eligible programmes
-      .text-body2 {{ brief.programmes }}
-
-      q-separator.q-my-lg
-
-      div(v-if="isInShortlist")
-        q-banner.bg-positive.text-white(rounded)
-          template(v-slot:avatar)
-            q-icon(name="check_circle")
-          | In your shortlist — rank {{ rank }}
-          template(v-slot:action)
-            q-btn(flat, color="white", label="Remove", @click="removeFromShortlist(brief.id)", aria-label="Remove from shortlist")
-
-      div(v-else-if="!shortlistFull")
+      div(v-if="!isInShortlist && !shortlistFull")
         q-btn(
           unelevated,
           color="black",
@@ -70,15 +77,7 @@ q-page.q-pa-md(v-if="brief")
           :aria-label="`Add ${brief.title} to shortlist`"
         )
         .text-caption.q-mt-sm.text-grey-7(v-if="shortlistCount > 0")
-          | {{ 4 - shortlistCount }} slot{{ (4 - shortlistCount) !== 1 ? 's' : '' }} remaining
-
-      div(v-else)
-        q-banner.bg-warning.text-dark(rounded)
-          template(v-slot:avatar)
-            q-icon(name="warning")
-          | Shortlist full (max 4). Remove a brief from your
-          q-btn.q-ml-xs(flat, dense, no-caps, size="sm", :to="'/shortlist'") shortlist
-          |  to add this one.
+          | {{ 3 - shortlistCount }} slot{{ (3 - shortlistCount) !== 1 ? 's' : '' }} remaining
 
       .q-mt-xl
         pitch-c-t-a
@@ -162,3 +161,19 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.id-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #21ba45;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+</style>

@@ -14,27 +14,23 @@ q-banner.q-mt-md(
       :unelevated="!compact",
       :color="compact ? 'grey-8' : 'black'",
       :label="compact ? 'Pitch your project' : 'Pitch your own project'",
-      :href="pitchUrl",
-      target="_blank",
-      rel="noopener noreferrer",
       :size="compact ? 'sm' : 'md'",
       no-caps,
-      aria-label="Pitch your own project — opens the external submission form"
+      aria-label="Pitch your own project",
+      @click="store.pitchDialogOpen = true"
     )
 </template>
 
 <script>
-import { PITCH_FORM_URL } from '@/config';
+import { useBriefBankStore } from '@/store';
 
 export default {
   name: 'PitchCTA',
   props: {
     compact: { type: Boolean, default: false },
   },
-  computed: {
-    pitchUrl() {
-      return PITCH_FORM_URL;
-    },
+  setup() {
+    return { store: useBriefBankStore() };
   },
 };
 </script>

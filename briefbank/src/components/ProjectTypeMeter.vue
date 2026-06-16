@@ -1,23 +1,22 @@
 <template lang="pug">
-.project-type-meter
-  .row.items-center.no-wrap.q-col-gutter-xs(v-if="!compact")
-    .col-auto.text-caption.text-grey-6(aria-hidden="true") Investigation
+.project-type-scale(
+  role="img"
+  :aria-label="`Project type: ${label}`"
+)
+  .row.items-center.no-wrap.q-gutter-md
+    .col-auto.scale-end-label Investigative
     .col
-      .row.no-wrap.items-center.q-col-gutter-xs(
-        role="img",
-        :aria-label="`Project type ${value} out of 5 — ${label}`"
+      q-slider.scale-slider(
+        :model-value="value"
+        :min="1"
+        :max="5"
+        :step="1"
+        readonly
+        color="grey-9"
+        track-color="grey-4"
       )
-        .col-auto(v-for="i in 5" :key="i")
-          .type-dot(:class="{ active: i <= value }")
-    .col-auto.text-caption.text-grey-6(aria-hidden="true") Build
-  .row.no-wrap.items-center.q-col-gutter-xs(
-    v-else,
-    role="img",
-    :aria-label="`Project type: ${label}`"
-  )
-    .col-auto(v-for="i in 5" :key="i")
-      .type-dot.small(:class="{ active: i <= value }")
-  .text-caption.text-grey-6.q-mt-xs {{ label }}
+    .col-auto.scale-end-label Product / Build
+  .text-caption.text-grey-7.text-center.q-mt-none {{ label }}
 </template>
 
 <script>
@@ -27,7 +26,6 @@ export default {
   name: 'ProjectTypeMeter',
   props: {
     value: { type: Number, required: true },
-    compact: { type: Boolean, default: false },
   },
   computed: {
     label() {
@@ -38,21 +36,15 @@ export default {
 </script>
 
 <style scoped>
-.type-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  background: #fff;
-  display: inline-block;
-  flex-shrink: 0;
+.scale-end-label {
+  font-size: 0.7rem;
+  color: #9e9e9e;
+  white-space: nowrap;
 }
-.type-dot.active {
-  background: #111;
-  border-color: #111;
+.scale-slider {
+  pointer-events: none;
 }
-.type-dot.small {
-  width: 10px;
-  height: 10px;
+.scale-slider :deep(.q-slider__selection) {
+  opacity: 0;
 }
 </style>

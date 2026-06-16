@@ -2,7 +2,6 @@
 q-page.q-pa-md
   .row.items-center.q-mb-lg
     .col
-      q-btn(flat, dense, icon="arrow_back", @click="goBack", no-caps) Back
     .col-auto(v-if="shortlistBriefs.length")
       q-btn(
         flat,
@@ -15,80 +14,70 @@ q-page.q-pa-md
         aria-label="Clear all briefs from shortlist"
       )
 
-  .text-h5.text-bold.q-mb-xs My shortlist
-  .text-body2.text-grey-7.q-mb-lg(v-if="shortlistArea") Area: {{ shortlistArea }}
-
   .row.justify-center(v-if="shortlistBriefs.length === 0")
-    .col-12.col-md-8.text-center.q-mt-xl
-      q-icon(name="playlist_add", size="4rem", color="grey-4")
-      .text-h6.text-grey-5.q-mt-md No briefs in your shortlist yet
-      q-btn.q-mt-lg(unelevated, color="black", :to="'/'", label="Browse areas")
+    .col-12.col-md-8
+      .text-h5.text-bold.q-mb-xs My shortlist
+      .text-body2.text-grey-7.q-mb-lg(v-if="shortlistArea") Area: {{ shortlistArea }}
+      .text-center.q-mt-xl
+        q-icon(name="playlist_add", size="4rem", color="grey-4")
+        .text-h6.text-grey-5.q-mt-md No briefs in your shortlist yet
+        q-btn.q-mt-lg(unelevated, color="black", :to="'/'", label="Browse areas")
 
   .row.justify-center(v-else)
     .col-12.col-md-8
-      .text-caption.text-grey-7.q-mb-md Use the arrows to set your preference order. Rank 1 is your first choice.
+      .text-h5.text-bold.q-mb-xs My shortlist
+      .text-body2.text-grey-7.q-mb-lg(v-if="shortlistArea") Area: {{ shortlistArea }}
+      .text-caption.text-grey-7.q-mb-md Use the arrows to set your preference order. Rank 1 is your top choice.
 
-      draggable(
-        v-model="localBriefs",
-        item-key="id",
-        handle=".drag-handle",
-        ghost-class="drag-ghost",
-        @end="onDragEnd"
-      )
-        template(v-slot:item="{ element: brief, index: idx }")
-          .q-mb-sm
-            q-card(flat, bordered)
-              q-card-section(horizontal)
-                .col-auto.flex.flex-center.q-px-sm.drag-handle(
-                  title="Drag to reorder",
-                  aria-hidden="true",
-                  style="cursor: grab; color: #bbb"
+      div
+        .q-mb-sm(v-for="(brief, idx) in localBriefs", :key="brief.id")
+          q-card(flat, bordered)
+            q-card-section(horizontal)
+              .col-auto.flex.flex-center.q-px-md.bg-black.text-white(
+                style="min-width: 44px",
+                :aria-label="`Rank ${idx + 1}`"
+              )
+                .text-h6.text-bold {{ idx + 1 }}
+              q-separator(vertical)
+              .col.q-pa-sm
+                .row.items-center.q-col-gutter-sm.no-wrap.q-mb-xs
+                  .col-auto
+                    .id-circle {{ brief.id.replace(/^P/, '') }}
+                  .col
+                    .text-h5.text-bold.text-uppercase {{ brief.title }}
+                .text-caption.text-grey-7(v-if="brief.specialism_tag") {{ brief.specialism_tag }}
+              q-separator(vertical)
+              .col-auto.column.justify-center.q-pa-xs
+                q-btn(
+                  flat,
+                  dense,
+                  round,
+                  icon="keyboard_arrow_up",
+                  :disable="idx === 0",
+                  @click="moveUp(idx)",
+                  :aria-label="`Move ${brief.title} up`"
                 )
-                  q-icon(name="drag_indicator")
-                q-separator(vertical)
-                .col-auto.flex.flex-center.q-px-md.bg-black.text-white(
-                  style="min-width: 44px",
-                  :aria-label="`Rank ${idx + 1}`"
+                q-btn(
+                  flat,
+                  dense,
+                  round,
+                  icon="keyboard_arrow_down",
+                  :disable="idx === localBriefs.length - 1",
+                  @click="moveDown(idx)",
+                  :aria-label="`Move ${brief.title} down`"
                 )
-                  .text-h6.text-bold {{ idx + 1 }}
-                q-separator(vertical)
-                .col.q-pa-sm
-                  .text-subtitle2.text-bold {{ brief.title }}
-                  .text-caption.text-grey-7 {{ brief.id }}
-                    span(v-if="brief.specialism_tag")  · {{ brief.specialism_tag }}
-                  project-type-meter(:value="brief.project_type_1to5", :compact="true")
-                q-separator(vertical)
-                .col-auto.column.justify-center.q-pa-xs
-                  q-btn(
-                    flat,
-                    dense,
-                    round,
-                    icon="keyboard_arrow_up",
-                    :disable="idx === 0",
-                    @click="moveUp(idx)",
-                    :aria-label="`Move ${brief.title} up`"
-                  )
-                  q-btn(
-                    flat,
-                    dense,
-                    round,
-                    icon="keyboard_arrow_down",
-                    :disable="idx === localBriefs.length - 1",
-                    @click="moveDown(idx)",
-                    :aria-label="`Move ${brief.title} down`"
-                  )
-                  q-btn(
-                    flat,
-                    dense,
-                    round,
-                    icon="close",
-                    color="negative",
-                    @click="removeFromShortlist(brief.id)",
-                    :aria-label="`Remove ${brief.title} from shortlist`"
-                  )
+                q-btn(
+                  flat,
+                  dense,
+                  round,
+                  icon="close",
+                  color="negative",
+                  @click="removeFromShortlist(brief.id)",
+                  :aria-label="`Remove ${brief.title} from shortlist`"
+                )
 
-      .text-caption.text-grey-6.q-mt-sm(v-if="shortlistBriefs.length < 4")
-        | You can add up to {{ 4 - shortlistBriefs.length }} more brief{{ (4 - shortlistBriefs.length) !== 1 ? 's' : '' }}.
+      .text-caption.text-grey-6.q-mt-sm(v-if="shortlistBriefs.length < 3")
+        | You can add up to {{ 3 - shortlistBriefs.length }} more brief{{ (3 - shortlistBriefs.length) !== 1 ? 's' : '' }}.
         q-btn.q-ml-sm(flat, dense, no-caps, size="sm", :to="areaSlug ? `/area/${areaSlug}` : '/'") Add more
 
       q-separator.q-my-lg
@@ -104,27 +93,37 @@ q-page.q-pa-md
             label="Student ID (w-number)",
             placeholder="e.g. w12345678",
             aria-label="Student ID — required to submit",
-            autocomplete="off"
+            autocomplete="off",
+            :rules="[idRule]",
+            lazy-rules
           )
         .col-12.col-sm-6
           q-input(
-            v-model="studentProgramme",
+            v-model="studentEmail",
             dense,
             outlined,
-            label="Programme",
-            placeholder="e.g. BSc Computer Science",
-            aria-label="Programme"
+            label="University email address",
+            placeholder="e.g. w12345678@northumbria.ac.uk",
+            type="email",
+            aria-label="University email address",
+            :rules="[emailRule]",
+            lazy-rules
           )
 
       q-banner.q-mt-md.bg-blue-1(v-if="!canSubmit", rounded)
         template(v-slot:avatar)
           q-icon(name="info", color="primary")
-        | Add at least one brief before submitting.
+        | You need 3 preferences before you can submit — {{ 3 - shortlistBriefs.length }} more to go.
 
-      q-banner.q-mt-md.bg-warning(v-else-if="!studentId.trim()", rounded)
+      q-banner.q-mt-md.bg-warning(v-else-if="!detailsValid", rounded)
         template(v-slot:avatar)
           q-icon(name="warning")
-        | Enter your student ID before submitting.
+        | Fix the errors above before submitting.
+
+      q-banner.q-mt-md.bg-negative.text-white(v-if="submitError", rounded)
+        template(v-slot:avatar)
+          q-icon(name="error", color="white")
+        | {{ submitError }}. Check your student ID and email address are correct.
 
       .row.justify-end.q-mt-lg
         q-btn(
@@ -133,7 +132,8 @@ q-page.q-pa-md
           color="black",
           label="Submit ranking",
           icon-right="send",
-          :disable="!canSubmit || !studentId.trim()",
+          :disable="!canSubmit || !detailsValid || submitting",
+          :loading="submitting",
           @click="submit",
           aria-label="Submit your ranked shortlist"
         )
@@ -145,16 +145,14 @@ q-page.q-pa-md
 <script>
 import { mapState, mapActions } from 'pinia';
 import { useBriefBankStore } from '@/store';
-import draggable from 'vuedraggable';
-import ProjectTypeMeter from '@/components/ProjectTypeMeter.vue';
 import PitchCTA from '@/components/PitchCTA.vue';
 import { SLUG_BY_AREA, SUBMISSION_ENDPOINT } from '@/config';
 
 export default {
   name: 'ShortlistPage',
-  components: { draggable, ProjectTypeMeter, PitchCTA },
+  components: { PitchCTA },
   data() {
-    return { localBriefs: [] };
+    return { localBriefs: [], submitError: null, submitting: false };
   },
   computed: {
     ...mapState(useBriefBankStore, ['shortlistBriefs', 'shortlistArea', 'canSubmit']),
@@ -169,13 +167,19 @@ export default {
         useBriefBankStore().setStudent({ id: val });
       },
     },
-    studentProgramme: {
+    studentEmail: {
       get() {
-        return useBriefBankStore().student.programme;
+        return useBriefBankStore().student.email;
       },
       set(val) {
-        useBriefBankStore().setStudent({ programme: val });
+        useBriefBankStore().setStudent({ email: val });
       },
+    },
+    detailsValid() {
+      return (
+        /^[a-z]+\d+$/i.test(this.studentId.trim()) &&
+        /@northumbria\.ac\.uk$/i.test(this.studentEmail.trim())
+      );
     },
   },
   watch: {
@@ -195,9 +199,6 @@ export default {
       'clearShortlist',
       'submitRanking',
     ]),
-    onDragEnd() {
-      this.reorderShortlist(this.localBriefs.map((b) => b.id));
-    },
     moveUp(idx) {
       if (idx === 0) return;
       const briefs = [...this.localBriefs];
@@ -212,22 +213,37 @@ export default {
       this.localBriefs = briefs;
       this.reorderShortlist(briefs.map((b) => b.id));
     },
+    idRule(val) {
+      return /^[a-z]+\d+$/i.test(val.trim()) || 'Must be a valid student or staff ID (e.g. w12345678)';
+    },
+    emailRule(val) {
+      return /@northumbria\.ac\.uk$/i.test(val.trim()) || 'Must be your Northumbria email address';
+    },
     goBack() {
       this.$router.push(
         this.areaSlug ? { name: 'area', params: { slug: this.areaSlug } } : { name: 'home' }
       );
     },
     async submit() {
+      this.submitError = null;
+      this.submitting = true;
       const payload = this.submitRanking();
       if (SUBMISSION_ENDPOINT) {
         try {
-          await fetch(SUBMISSION_ENDPOINT, {
+          const resp = await fetch(SUBMISSION_ENDPOINT, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
           });
+          if (!resp.ok) {
+            const data = await resp.json().catch(() => ({}));
+            this.submitError = data.error || 'Something went wrong. Please try again.';
+            this.submitting = false;
+            return;
+          }
         } catch (e) {
           console.error('Submission POST failed:', e);
+          this.submitting = false;
         }
       }
       this.$router.push({ name: 'confirm' });
@@ -237,10 +253,18 @@ export default {
 </script>
 
 <style scoped>
-.drag-handle:active {
-  cursor: grabbing;
+.id-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #21ba45;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  flex-shrink: 0;
 }
-.drag-ghost {
-  opacity: 0.4;
-}
+
 </style>

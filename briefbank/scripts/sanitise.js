@@ -10,12 +10,14 @@ const WHITELIST = [
   'title',
   'area',
   'specialism_tag',
+  'specialism_family',
   'project_type_1to5',
   'generic_brief',
   'worked_examples',
   'methods_it_might_involve',
   'technologies_it_might_use',
   'programmes',
+  'eligible_supervisors',
 ];
 
 const AREA_MAP = {

@@ -5,7 +5,7 @@ q-page.q-pa-md
       q-icon(name="check_circle", size="5rem", color="positive")
       .text-h5.text-bold.q-mt-md Ranking submitted
       .text-body1.text-grey-7.q-mt-sm(v-if="submitted")
-        | Keep a note of your choices below.
+        | A confirmation email has been sent to your Northumbria address.
         br
         | You'll be contacted about your allocation by the module team.
 
@@ -13,15 +13,7 @@ q-page.q-pa-md
     .col-12.col-md-8
       q-card(flat, bordered)
         q-card-section
-          .text-overline.text-grey-7 Module
-          .text-body2 {{ submitted.module }}
-        q-separator
-        q-card-section
-          .text-overline.text-grey-7 Area
-          .text-body1.text-bold {{ submitted.area }}
-        q-separator
-        q-card-section
-          .text-overline.text-grey-7 Your ranked choices
+          .text-overline.text-grey-7 Your top 3 choices
           .q-mt-sm
             .row.items-start.q-mb-sm(v-for="(id, idx) of submitted.ranking" :key="id")
               .text-h6.text-bold.text-grey-4.q-mr-md(style="min-width: 28px") {{ idx + 1 }}
@@ -32,13 +24,6 @@ q-page.q-pa-md
         q-card-section
           .text-overline.text-grey-7 Submitted
           .text-body2 {{ formatDate(submitted.submitted_at) }}
-        q-separator
-        q-card-section
-          details
-            summary.text-caption.text-grey-7.cursor-pointer View submission payload
-            pre.q-mt-sm.bg-grey-1.q-pa-sm(
-              style="font-size: 11px; overflow-x: auto; white-space: pre-wrap"
-            ) {{ JSON.stringify(submitted, null, 2) }}
 
       .row.justify-center.q-mt-xl
         q-btn(unelevated, color="black", :to="'/'", label="Back to areas")

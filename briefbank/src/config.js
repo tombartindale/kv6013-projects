@@ -1,5 +1,7 @@
 export const PITCH_FORM_URL = '__PITCH_FORM_URL__';
 
+export const PREFERENCES_DEADLINE = '2026-10-09';
+
 export const SUBMISSION_ENDPOINT = import.meta.env.VITE_SUBMISSION_ENDPOINT || '';
 
 export const AREA_SLUGS = {

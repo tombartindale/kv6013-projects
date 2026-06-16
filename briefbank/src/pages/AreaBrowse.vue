@@ -1,74 +1,66 @@
 <template lang="pug">
 q-page.q-pa-md
-  .row.items-center.q-mb-md
-    .col
-      q-btn(flat, dense, icon="arrow_back", :to="'/'", no-caps) All areas
-    .col-auto
-      q-btn(
-        flat,
-        dense,
-        :to="'/shortlist'",
-        no-caps,
-        :aria-label="`Shortlist — ${shortlistCount} selected`"
-      )
-        q-icon(name="playlist_add_check")
-        q-badge(v-if="shortlistCount > 0", floating, color="amber", text-color="black") {{ shortlistCount }}
-        span.q-ml-xs Shortlist
+  .row.justify-center.q-mb-xs
+    .col-12.col-md-10.col-lg-8.text-center
+      .text-h5.text-bold {{ areaName }}
+      .text-body2.text-grey-7.q-mt-xs(v-if="descriptions[areaName]") {{ descriptions[areaName] }}
 
-  .text-h5.text-bold.q-mb-xs {{ areaName }}
-  .text-body2.text-grey-7.q-mb-lg(v-if="descriptions[areaName]") {{ descriptions[areaName] }}
+  .row.justify-center.q-mb-sm(v-if="allFamilies.length")
+    .col-12.col-md-10.col-lg-8
+      .row.justify-center.items-center.q-gutter-sm
+        .text-body2.text-grey-7 Specialism
+        q-chip(
+          v-for="fam of allFamilies"
+          :key="fam"
+          clickable
+          :selected="selectedFamily === fam"
+          @click="selectedFamily = selectedFamily === fam ? null : fam"
+        ) {{ fam }}
 
-  .row.q-col-gutter-md.q-mb-sm
-    .col-12.col-sm-6
-      q-input(
-        v-model="search",
-        dense,
-        outlined,
-        clearable,
-        placeholder="Search briefs…",
-        aria-label="Search briefs by title, description, or tag"
-      )
-        template(v-slot:prepend)
-          q-icon(name="search")
-    .col-12.col-sm-6
-      q-select(
-        v-model="typeFilter",
-        dense,
-        outlined,
-        clearable,
-        label="Project type",
-        :options="typeOptions",
-        emit-value,
-        map-options,
-        aria-label="Filter by project type"
-      )
+  .row.justify-center.q-mb-sm(v-if="filterableMethodTags.length")
+    .col-12.col-md-10.col-lg-8
+      .row.justify-center.items-center.q-gutter-sm
+        .text-body2.text-grey-7 Methods
+        q-chip(
+          v-for="tag of filterableMethodTags"
+          :key="tag"
+          clickable
+          :selected="selectedMethods[tag]"
+          @click="toggleMethod(tag)"
+        ) {{ tag }}
 
-  .row.items-center.q-col-gutter-sm.q-mb-md(v-if="specialismTags.length")
-    .col-auto
-      .text-overline.text-grey-7 Specialism
-    .col-auto(v-for="tag of specialismTags" :key="tag")
-      q-chip(
-        clickable,
-        dense,
-        :selected="selectedTags[tag]",
-        @update:selected="(v) => setTag(tag, v)",
-        :aria-pressed="!!selectedTags[tag]"
-      ) {{ tag }}
+  .row.justify-center.q-mb-lg(v-if="filterableTechTags.length")
+    .col-12.col-md-10.col-lg-8
+      .row.justify-center.items-center.q-gutter-sm
+        .text-body2.text-grey-7 Technologies
+        q-chip(
+          v-for="tag of filterableTechTags"
+          :key="tag"
+          clickable
+          color="blue-grey-1"
+          :selected="selectedTech[tag]"
+          @click="toggleTech(tag)"
+        ) {{ tag }}
 
-  .text-body2.text-grey-6.q-mb-md Showing {{ filtered.length }} of {{ briefs.length }} briefs
+  .text-body2.text-grey-6.q-mb-md.text-center Showing {{ filtered.length }} of {{ briefs.length }} briefs
 
   .row.q-col-gutter-md
     .col-12.col-sm-6.col-md-4(v-for="brief of filtered" :key="brief.id")
       brief-card(
         :brief="brief",
-        :area-slug="$route.params.slug",
-        @add="handleAdd"
+        :area-slug="slugForBrief(brief)",
+        :active-method-tags="activeMethodTagsArr",
+        :active-tech-tags="activeTechTagsArr",
+        :in-shortlist="shortlistIds.includes(brief.id)",
+        @add="handleAdd",
+        @toggle-method="toggleMethod",
+        @toggle-tech="toggleTech"
       )
 
   .row.justify-center.q-mt-lg(v-if="filtered.length === 0 && briefs.length > 0")
     .col-auto.text-center
       q-icon(name="search_off", size="3rem", color="grey-4")
-      .text-grey-6.q-mt-sm No briefs match — try clearing the search or filters.
+      .text-grey-6.q-mt-sm No briefs match — try clearing the filters.
 
   .q-mt-xl
     pitch-c-t-a
@@ -91,26 +83,30 @@ q-page.q-pa-md
 <script>
 import { mapState, mapActions } from 'pinia';
 import { useBriefBankStore } from '@/store';
-import { AREA_SLUGS, AREA_DESCRIPTIONS } from '@/config';
+import { AREA_SLUGS, AREA_DESCRIPTIONS, SLUG_BY_AREA } from '@/config';
 import BriefCard from '@/components/BriefCard.vue';
 import PitchCTA from '@/components/PitchCTA.vue';
+
+const METHOD_EXCLUDE = new Set(['Model evaluation']);
+const TECH_EXCLUDE = new Set(['Python']);
 
 export default {
   name: 'AreaBrowse',
   components: { BriefCard, PitchCTA },
   data() {
     return {
-      search: '',
-      typeFilter: null,
-      selectedTags: {},
+      selectedFamily: null,
+      selectedMethods: {},
+      selectedTech: {},
       switchDialog: false,
       pendingBrief: null,
     };
   },
   computed: {
-    ...mapState(useBriefBankStore, ['shortlistArea', 'briefsByArea']),
+    ...mapState(useBriefBankStore, ['shortlistArea', 'briefsByArea', 'allBriefs']),
     ...mapState(useBriefBankStore, {
       shortlistCount: (state) => state.shortlist.length,
+      shortlistIds: (state) => state.shortlist,
     }),
     areaName() {
       return AREA_SLUGS[this.$route.params.slug] || '';
@@ -121,38 +117,41 @@ export default {
     descriptions() {
       return AREA_DESCRIPTIONS;
     },
-    specialismTags() {
-      return [...new Set(this.briefs.map((b) => b.specialism_tag).filter(Boolean))].sort();
+    allFamilies() {
+      return [...new Set(this.allBriefs.map((b) => b.specialism_family).filter(Boolean))].sort();
     },
-    typeOptions() {
-      return [
-        { label: 'Investigation (1–2)', value: 'investigation' },
-        { label: 'Balanced (3)', value: 'balanced' },
-        { label: 'Build (4–5)', value: 'build' },
-      ];
+    filterableMethodTags() {
+      return [...new Set(this.briefs.flatMap((b) => b.methods_it_might_involve || []))]
+        .filter((t) => !METHOD_EXCLUDE.has(t))
+        .sort();
+    },
+    filterableTechTags() {
+      return [...new Set(this.briefs.flatMap((b) => b.technologies_it_might_use || []))]
+        .filter((t) => !TECH_EXCLUDE.has(t))
+        .sort();
+    },
+    activeMethodTagsArr() {
+      return Object.keys(this.selectedMethods).filter((t) => this.selectedMethods[t]);
+    },
+    activeTechTagsArr() {
+      return Object.keys(this.selectedTech).filter((t) => this.selectedTech[t]);
     },
     filtered() {
-      let result = this.briefs;
-      if (this.search) {
-        const q = this.search.toLowerCase();
-        result = result.filter(
-          (b) =>
-            b.title.toLowerCase().includes(q) ||
-            (b.generic_brief || '').toLowerCase().includes(q) ||
-            (b.specialism_tag || '').toLowerCase().includes(q)
+      // Specialism family filter is cross-area: start from all briefs when active
+      let result = this.selectedFamily ? this.allBriefs : this.briefs;
+
+      if (this.selectedFamily) {
+        result = result.filter((b) => b.specialism_family === this.selectedFamily);
+      }
+      if (this.activeMethodTagsArr.length) {
+        result = result.filter((b) =>
+          this.activeMethodTagsArr.some((t) => (b.methods_it_might_involve || []).includes(t))
         );
       }
-      if (this.typeFilter) {
-        result = result.filter((b) => {
-          if (this.typeFilter === 'investigation') return b.project_type_1to5 <= 2;
-          if (this.typeFilter === 'balanced') return b.project_type_1to5 === 3;
-          if (this.typeFilter === 'build') return b.project_type_1to5 >= 4;
-          return true;
-        });
-      }
-      const activeTags = Object.keys(this.selectedTags).filter((t) => this.selectedTags[t]);
-      if (activeTags.length) {
-        result = result.filter((b) => activeTags.includes(b.specialism_tag));
+      if (this.activeTechTagsArr.length) {
+        result = result.filter((b) =>
+          this.activeTechTagsArr.some((t) => (b.technologies_it_might_use || []).includes(t))
+        );
       }
       return result;
     },
@@ -161,18 +160,30 @@ export default {
     briefs: {
       immediate: true,
       handler(briefs) {
-        const tags = {};
-        briefs.forEach((b) => {
-          if (b.specialism_tag) tags[b.specialism_tag] = false;
-        });
-        this.selectedTags = tags;
+        const methods = {};
+        briefs.forEach((b) =>
+          (b.methods_it_might_involve || []).forEach((t) => { methods[t] = false; })
+        );
+        this.selectedMethods = methods;
+
+        const tech = {};
+        briefs.forEach((b) =>
+          (b.technologies_it_might_use || []).forEach((t) => { tech[t] = false; })
+        );
+        this.selectedTech = tech;
       },
     },
   },
   methods: {
     ...mapActions(useBriefBankStore, ['addToShortlist', 'switchAreaAndAdd']),
-    setTag(tag, val) {
-      this.selectedTags[tag] = val;
+    slugForBrief(brief) {
+      return SLUG_BY_AREA[brief.area] || this.$route.params.slug;
+    },
+    toggleMethod(tag) {
+      this.selectedMethods[tag] = !this.selectedMethods[tag];
+    },
+    toggleTech(tag) {
+      this.selectedTech[tag] = !this.selectedTech[tag];
     },
     handleAdd(brief) {
       if (this.shortlistArea && this.shortlistArea !== brief.area) {
