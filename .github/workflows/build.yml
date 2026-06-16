@@ -41,7 +41,7 @@ jobs:
       - name: Install dependencies
         run: npm i --silent
       - name: Build
-        run: npm run build
+        run: npm run build:quick
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
