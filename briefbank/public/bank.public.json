@@ -1,7 +1,7 @@
 {
   "module": "KV6013",
   "bank_version": "final-2026-06-16",
-  "n_briefs": 55,
+  "n_briefs": 56,
   "briefs": [
     {
       "id": "P01",
@@ -101,7 +101,9 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P05",
@@ -116,8 +118,14 @@
         "A comparison of machine-learning models for fake-news detection on the LIAR dataset.",
         "A hybrid multimodal system detecting fake news from combined text and image content."
       ],
-      "methods_it_might_involve": ["Model evaluation", "NLP", "Supervised ML"],
-      "technologies_it_might_use": ["Python"]
+      "methods_it_might_involve": [
+        "Model evaluation",
+        "NLP",
+        "Supervised ML"
+      ],
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P06",
@@ -138,7 +146,10 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": ["C/C++", "Python"]
+      "technologies_it_might_use": [
+        "C/C++",
+        "Python"
+      ]
     },
     {
       "id": "P07",
@@ -160,7 +171,9 @@
         "Signal processing",
         "Supervised ML"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P08",
@@ -181,7 +194,9 @@
         "Supervised ML",
         "System design"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P09",
@@ -202,7 +217,10 @@
         "Signal processing",
         "Supervised ML"
       ],
-      "technologies_it_might_use": ["OpenCV", "Python"]
+      "technologies_it_might_use": [
+        "OpenCV",
+        "Python"
+      ]
     },
     {
       "id": "P10",
@@ -222,7 +240,9 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P11",
@@ -242,7 +262,9 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P12",
@@ -281,7 +303,10 @@
         "A retrieval-augmented-generation system over cybersecurity knowledge bases (MITRE ATT&CK, CVEs) to support red-team analysis.",
         "An NLP chatbot to improve how charities communicate with beneficiaries, volunteers and donors."
       ],
-      "methods_it_might_involve": ["Model evaluation", "NLP"],
+      "methods_it_might_involve": [
+        "Model evaluation",
+        "NLP"
+      ],
       "technologies_it_might_use": [
         "JavaScript",
         "LLM APIs",
@@ -329,7 +354,10 @@
         "A study of data-storage and network-security measures for a ROS2 road-inspection robot handling critical-infrastructure data.",
         "An autonomous road-inspection robot built in ROS2 and tested in Gazebo simulation to detect road hazards such as potholes."
       ],
-      "methods_it_might_involve": ["Robotics", "Simulation"],
+      "methods_it_might_involve": [
+        "Robotics",
+        "Simulation"
+      ],
       "technologies_it_might_use": [
         "C/C++",
         "OpenCV",
@@ -356,7 +384,9 @@
         "Reinforcement learning",
         "Simulation"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P17",
@@ -376,7 +406,10 @@
         "Signal processing",
         "Supervised ML"
       ],
-      "technologies_it_might_use": ["Python", "Sensor hardware"]
+      "technologies_it_might_use": [
+        "Python",
+        "Sensor hardware"
+      ]
     },
     {
       "id": "P18",
@@ -396,7 +429,11 @@
         "Model evaluation",
         "Simulation"
       ],
-      "technologies_it_might_use": ["C/C++", "Network simulation", "Python"]
+      "technologies_it_might_use": [
+        "C/C++",
+        "Network simulation",
+        "Python"
+      ]
     },
     {
       "id": "P19",
@@ -416,7 +453,9 @@
         "Model evaluation",
         "Supervised ML"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P20",
@@ -437,7 +476,9 @@
         "Deep learning",
         "Feature engineering"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P21",
@@ -482,7 +523,11 @@
         "NLP",
         "Security analysis"
       ],
-      "technologies_it_might_use": ["LLM APIs", "Network simulation", "Python"]
+      "technologies_it_might_use": [
+        "LLM APIs",
+        "Network simulation",
+        "Python"
+      ]
     },
     {
       "id": "P23",
@@ -524,7 +569,10 @@
         "Security analysis",
         "System design"
       ],
-      "technologies_it_might_use": ["Python", "Static analysis tools"]
+      "technologies_it_might_use": [
+        "Python",
+        "Static analysis tools"
+      ]
     },
     {
       "id": "P25",
@@ -543,7 +591,12 @@
         "Model evaluation",
         "Simulation"
       ],
-      "technologies_it_might_use": ["C#", "LLM APIs", "Survey tools", "Unity"]
+      "technologies_it_might_use": [
+        "C#",
+        "LLM APIs",
+        "Survey tools",
+        "Unity"
+      ]
     },
     {
       "id": "P26",
@@ -586,7 +639,11 @@
         "Statistical analysis",
         "User research"
       ],
-      "technologies_it_might_use": ["Python", "R", "Survey tools"]
+      "technologies_it_might_use": [
+        "Python",
+        "R",
+        "Survey tools"
+      ]
     },
     {
       "id": "P28",
@@ -608,7 +665,9 @@
         "NLP",
         "Supervised ML"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P29",
@@ -649,7 +708,10 @@
         "A comparison of path-planning algorithms (Dijkstra, A*, Theta*) for routing offshore wind-farm subsea cables.",
         "The design and evaluation of a multi-hop wireless sensor network built with ESP32 microcontrollers, comparing routing protocols."
       ],
-      "methods_it_might_involve": ["Prototyping", "Security analysis"],
+      "methods_it_might_involve": [
+        "Prototyping",
+        "Security analysis"
+      ],
       "technologies_it_might_use": [
         "C/C++",
         "Network simulation",
@@ -676,7 +738,10 @@
         "System design",
         "Visualisation"
       ],
-      "technologies_it_might_use": ["Cloud platforms", "Python"]
+      "technologies_it_might_use": [
+        "Cloud platforms",
+        "Python"
+      ]
     },
     {
       "id": "P32",
@@ -696,7 +761,9 @@
         "NLP",
         "Security analysis"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P33",
@@ -716,7 +783,10 @@
         "System design",
         "Usability evaluation"
       ],
-      "technologies_it_might_use": ["C#", "Python"]
+      "technologies_it_might_use": [
+        "C#",
+        "Python"
+      ]
     },
     {
       "id": "P34",
@@ -737,7 +807,12 @@
         "Usability evaluation",
         "User research"
       ],
-      "technologies_it_might_use": ["JavaScript", "Python", "SQL", "Web stack"]
+      "technologies_it_might_use": [
+        "JavaScript",
+        "Python",
+        "SQL",
+        "Web stack"
+      ]
     },
     {
       "id": "P35",
@@ -781,7 +856,9 @@
         "System design",
         "User research"
       ],
-      "technologies_it_might_use": ["Static analysis tools"]
+      "technologies_it_might_use": [
+        "Static analysis tools"
+      ]
     },
     {
       "id": "P37",
@@ -802,7 +879,12 @@
         "Statistical analysis",
         "User research"
       ],
-      "technologies_it_might_use": ["JavaScript", "Python", "R", "Web stack"]
+      "technologies_it_might_use": [
+        "JavaScript",
+        "Python",
+        "R",
+        "Web stack"
+      ]
     },
     {
       "id": "P38",
@@ -822,7 +904,9 @@
         "Model evaluation",
         "Statistical analysis"
       ],
-      "technologies_it_might_use": ["Python"]
+      "technologies_it_might_use": [
+        "Python"
+      ]
     },
     {
       "id": "P39",
@@ -842,7 +926,10 @@
         "Statistical analysis",
         "Visualisation"
       ],
-      "technologies_it_might_use": ["Python", "SQL"]
+      "technologies_it_might_use": [
+        "Python",
+        "SQL"
+      ]
     },
     {
       "id": "P40",
@@ -862,7 +949,10 @@
         "Model evaluation",
         "Visualisation"
       ],
-      "technologies_it_might_use": ["Python", "SQL"]
+      "technologies_it_might_use": [
+        "Python",
+        "SQL"
+      ]
     },
     {
       "id": "P41",
@@ -907,7 +997,10 @@
         "Statistical analysis",
         "User research"
       ],
-      "technologies_it_might_use": ["Python", "Survey tools"]
+      "technologies_it_might_use": [
+        "Python",
+        "Survey tools"
+      ]
     },
     {
       "id": "P43",
@@ -957,7 +1050,12 @@
         "Usability evaluation",
         "User research"
       ],
-      "technologies_it_might_use": ["Figma", "JavaScript", "SQL", "Web stack"]
+      "technologies_it_might_use": [
+        "Figma",
+        "JavaScript",
+        "SQL",
+        "Web stack"
+      ]
     },
     {
       "id": "P45",
@@ -1133,7 +1231,11 @@
         "Qualitative analysis",
         "User research"
       ],
-      "technologies_it_might_use": ["Python", "R", "Survey tools"]
+      "technologies_it_might_use": [
+        "Python",
+        "R",
+        "Survey tools"
+      ]
     },
     {
       "id": "P52",
@@ -1239,6 +1341,29 @@
         "Unity",
         "Unreal Engine",
         "VR hardware"
+      ]
+    },
+    {
+      "id": "P56",
+      "title": "Digital Cleanup Day — communicating sustainable data-management behaviour",
+      "area": "Human-Centred & Interactive Computing",
+      "specialism_tag": "Behaviour change / digital sustainability",
+      "specialism_family": "Human-Centred & Interactive",
+      "project_type_1to5": 3,
+      "generic_brief": "Research and identify good digital-data-management practices, behaviours and resources — reducing 'digital waste' (redundant files, emails, photos and stored data) and its environmental cost — then design and evaluate ways to communicate them to a UK community audience. The project must deliver a defined output beyond the research — a set of evidence-based communication or behaviour-change design requirements, a framework situated in the literature, or a prototype awareness resource/intervention evaluated with users. Student refines the target community and channel. NOTE: proposed by Digital Cleanup Day UK (external partner). [SCREENING: research and awareness messaging alone do not meet the UG bar — the project must deliver design requirements, a literature-situated framework, or a participant-evaluated prototype.]",
+      "worked_examples": [],
+      "methods_it_might_involve": [
+        "Interaction design",
+        "Prototyping",
+        "Qualitative analysis",
+        "Usability evaluation",
+        "User research"
+      ],
+      "technologies_it_might_use": [
+        "Figma",
+        "JavaScript",
+        "Survey tools",
+        "Web stack"
       ]
     }
   ]
