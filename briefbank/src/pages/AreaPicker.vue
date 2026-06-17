@@ -18,15 +18,15 @@ q-page.q-pa-md
         .flow-step
           .flow-num 2
           .flow-body
-            .text-subtitle2.text-bold Browse &amp; select 4 briefs
-            .text-body2.text-grey-8 Read the briefs and add your four favourites to your shortlist.
+            .text-subtitle2.text-bold Browse &amp; select 3 briefs
+            .text-body2.text-grey-8 Read the briefs and add your three favourites to your shortlist.
         .flow-connector
           q-icon(name="arrow_forward", color="grey-4", size="20px")
         .flow-step
           .flow-num 3
           .flow-body
             .text-subtitle2.text-bold Submit your preferences
-            .text-body2.text-grey-8 Complete the preferences form with your top 4 choices, ranked in order.
+            .text-body2.text-grey-8 Complete the preferences form with your top 3 choices, ranked in order.
         .flow-connector
           q-icon(name="arrow_forward", color="grey-4", size="20px")
         .flow-step
@@ -103,23 +103,27 @@ export default {
   outline: 3px solid #000;
   outline-offset: 2px;
 }
+
 .how-it-works {
   display: flex;
   align-items: flex-start;
   gap: 0;
 }
+
 .flow-step {
   display: flex;
   align-items: flex-start;
   gap: 12px;
   flex: 1;
 }
+
 .flow-connector {
   padding-top: 8px;
   flex-shrink: 0;
   padding-left: 8px;
   padding-right: 8px;
 }
+
 .flow-num {
   width: 36px;
   height: 36px;
@@ -133,14 +137,17 @@ export default {
   justify-content: center;
   flex-shrink: 0;
 }
+
 .flow-body {
   padding-top: 4px;
 }
+
 @media (max-width: 599px) {
   .how-it-works {
     flex-direction: column;
     gap: 4px;
   }
+
   .flow-connector {
     padding: 0;
     margin-left: 8px;
