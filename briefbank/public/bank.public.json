@@ -1162,32 +1162,6 @@
       ]
     },
     {
-      "id": "P53",
-      "title": "Gesture / technology control of stage lighting",
-      "area": "Games & Immersive",
-      "specialism_tag": "HCI / interactive",
-      "specialism_family": "Human-Centred & Interactive",
-      "project_type_1to5": 4,
-      "generic_brief": "Build and evaluate a system controlling stage lighting via modern interaction (body gestures, poses, devices). Student refines the interaction method.",
-      "worked_examples": [
-        "A gesture- and pose-controlled system for operating stage lighting without specialist lighting desks.",
-        "A mobile web application letting performers and audiences control venue stage-lighting colour, brightness and direction."
-      ],
-      "methods_it_might_involve": [
-        "Interaction design",
-        "Model evaluation",
-        "Prototyping",
-        "Robotics",
-        "Usability evaluation"
-      ],
-      "technologies_it_might_use": [
-        "JavaScript",
-        "OpenCV",
-        "Python",
-        "Sensor hardware"
-      ]
-    },
-    {
       "id": "P54",
       "title": "Games design study or playable prototype investigating a player-experience question",
       "area": "Games & Immersive",
